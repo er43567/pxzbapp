@@ -114,7 +114,7 @@ public class zbAction extends ActionSupport {
 		}
 	}
 
-	// ---用户获取自己的全部教职工信息
+	// ---用户获取自己的全部用户信息
 	public void userGetzbInfo() {
 		try {
 			TableInfoAndUserVo zbInfo = zbService.userGetzbInfo(sessionuser.getUserId());
