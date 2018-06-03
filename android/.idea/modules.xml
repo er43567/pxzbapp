@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pazbapp.iml" filepath="$PROJECT_DIR$/pazbapp.iml" />
+      <module fileurl="file://E:\github\pxzbapp\android\app\app.iml" filepath="E:\github\pxzbapp\android\app\app.iml" />
+      <module fileurl="file://E:\github\pxzbapp\android\pazbapp.iml" filepath="E:\github\pxzbapp\android\pazbapp.iml" />
     </modules>
   </component>
 </project>
