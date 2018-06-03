@@ -435,7 +435,7 @@
 						});
 					}
 					$(document).off('mousemove.drag');
-					setTimeout(() => $(this).css('transition', ''), 1000);
+					setTimeout(function(){$(this).css('transition', '')}, 1000);
 				}
 			})
 		})
