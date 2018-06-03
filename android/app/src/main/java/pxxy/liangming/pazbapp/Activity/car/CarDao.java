@@ -8,48 +8,31 @@ package pxxy.liangming.pazbapp.Activity.car;
  */
 
 public class CarDao {
+     private int carId;
+     private String carNumber;
+     private String carState;
 
-    private int id;         //标识
-
-    private String username;//用户名
-
-    private String password;//密码
-
-    /* 以下为Get Set访问 */
-
-    public int getId() {
-
-        return id;
-
+    public int getCarId() {
+        return carId;
     }
 
-    public void setId(int id) {
-
-        this.id = id;
-
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
-    public String getUsername() {
-
-        return username;
-
+    public String getCarNumber() {
+        return carNumber;
     }
 
-    public void setUsername(String username) {
-
-        this.username = username;
-
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
     }
 
-    public String getPassword() {
-
-        return password;
-
+    public String getCarState() {
+        return carState;
     }
 
-    public void setPassword(String password) {
-
-        this.password = password;
-
+    public void setCarState(String carState) {
+        this.carState = carState;
     }
 }
