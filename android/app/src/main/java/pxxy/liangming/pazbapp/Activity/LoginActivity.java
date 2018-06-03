@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.concurrent.TimeUnit;
@@ -22,12 +23,15 @@ import java.util.concurrent.TimeUnit;
 import pxxy.liangming.pazbapp.R;
 import pxxy.liangming.pazbapp.SplashActivity;
 import pxxy.liangming.pazbapp.Titlebar.TitleBar;
+import pxxy.liangming.pazbapp.Util.Dialog;
+import pxxy.liangming.pazbapp.net.NetAdapterLrx;
+import pxxy.liangming.pazbapp.net.NetManager;
 
 /**
  * Created by Liangming on 2018/5/12 0020.
  */
 
-public class LoginActivity extends Activity{
+public class LoginActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,24 @@ public class LoginActivity extends Activity{
                 startActivity(intent);
                 finish();
                 Toast.makeText(getApplicationContext(),"登陆成功",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        NetAdapterLrx.loadDemoData("aslfsadf", new NetManager.INetCallback() {
+            @Override
+            public void onCallback(String result, JSONObject jsonObject) {
+                Dialog.showDialog(LoginActivity.this, result + "");
+                JSONArray ja = jsonObject.optJSONArray("userLi");
+                Dialog.showDialog(LoginActivity.this, "len=" + ja.length() + "");
+                JSONObject item = (JSONObject) ja.opt(0);
+                Dialog.showDialog(LoginActivity.this,  item.optString("userId"));
+
+                if (jsonObject != null)
+                    Dialog.showDialog(LoginActivity.this, jsonObject.toString());
+                else
+                    Dialog.showDialog(LoginActivity.this, "NULL");
+
+
             }
         });
 

@@ -5,6 +5,9 @@ package pxxy.liangming.pazbapp.Conf;
  */
 
 public class Conf {
-    public static final String URL = "http://";
+
+    public static final String DOMAIN = "10.102.4.72";
+    public static final String PORT = ":8080";
+    public static final String URL = "http://" + DOMAIN + PORT + "/zbgl";
 
 }

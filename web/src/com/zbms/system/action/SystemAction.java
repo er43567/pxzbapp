@@ -49,7 +49,7 @@ public class SystemAction extends ActionSupport {
 				System.out.println("登录异常");
 				ServletActionContext.getResponse().getWriter().write("{\"result\":\"" + result.toString() + "\"}");
 			} else {
-				System.out.println("正常登录");
+				System.out.println("正常登录...");
 				// 通过角色ID获取角色名称
 				String rolename = systemService.getUserRoleNameByRoleId(((User) result).getRoleId());
 				ActionContext.getContext().getSession().put("role", rolename);

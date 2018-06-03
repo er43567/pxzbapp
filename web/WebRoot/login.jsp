@@ -58,7 +58,6 @@
 				data : $("form").serialize(),
 				dataType : "json",
 				success : function(xhr_data) {
-	
 					if (xhr_data.result == "success") {
 						location.href = "page/main_index.jsp";
 					} else {
