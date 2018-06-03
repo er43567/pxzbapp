@@ -7,39 +7,16 @@
     android:layout_height="fill_parent"
 
     >
-<!--    <pxxy.liangming.pazbapp.Titlebar.TitleBar
-        android:id="@+id/title_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorTB"
-        >
+        <pxxy.liangming.pazbapp.Titlebar.TitleBar
+            android:id="@+id/title_barB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTB"
+            >
 
 
-    </pxxy.liangming.pazbapp.Titlebar.TitleBar>-->
- <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:orientation="horizontal"
-     android:layout_marginTop="15dp"
-     android:gravity="center_horizontal">
+        </pxxy.liangming.pazbapp.Titlebar.TitleBar>
 
-     <TextView
-         android:id="@+id/sc"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_gravity="center_horizontal"
-         android:layout_marginTop="15dp"
-         android:gravity="center_horizontal"
-         android:text="装备管理"
-         android:textColor="#FFF"
-         android:textSize="20sp" />
-     <TextView
-         android:id="@+id/today"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text=""
-         android:textColor="#FFF"/>
- </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

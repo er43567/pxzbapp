@@ -16,10 +16,8 @@ public class DjzbActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.xiaxc_danjingzb);
     }
 
-    @Override
-    public void setContentView(View view) {
-        super.setContentView(R.layout.xiaxc_danjingzb);
-    }
+
 }

@@ -5,6 +5,7 @@ package pxxy.liangming.pazbapp.Fragment;
  */
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,12 +29,14 @@ import pxxy.liangming.pazbapp.Activity.zb.JyzbActivity;
 import pxxy.liangming.pazbapp.Activity.zb.WqjxActivity;
 import pxxy.liangming.pazbapp.R;
 import pxxy.liangming.pazbapp.SplashActivity;
+import pxxy.liangming.pazbapp.Titlebar.TitleBar;
 
 /**
  * Created by Liangming on 2018/5/17 0020.
  */
 
 public class TabBFm extends Fragment{
+TitleBar titleBarB;
     TextView tv;
     @Override
     public void onAttach(Activity activity) {
@@ -63,8 +66,10 @@ public class TabBFm extends Fragment{
         System.out.println(date);
         SimpleDateFormat sd=new SimpleDateFormat("yyyy-MM-dd");
         String form=sd.format(date);
-        tv=(TextView) this.getView().findViewById(R.id.today);
-        tv.setText(form);
+
+        titleBarB=(TitleBar) getView().findViewById(R.id.title_barB);
+        titleBarB.setTitle("装备管理"+"\n["+form+"]");
+
         final Intent toDjzb =new Intent(getContext(), DjzbActivity.class);
         final Intent toFhzb =new Intent(getContext(), FhzbActivity.class);
         final Intent toJyzb =new Intent(getContext(),JyzbActivity.class);
