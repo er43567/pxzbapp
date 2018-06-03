@@ -74,11 +74,25 @@
 
     <com.leon.lib.settingview.LSettingItem
         android:id="@+id/item_five"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        leon:leftText="表情" />
+
+    <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/item_six"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/MyCheckBox"
+
+        leon:rightStyle="iconSwitch"
+        leon:leftText="设置" />
 
     <com.leon.lib.settingview.LSettingItem
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         leon:isShowUnderLine="false"
+
         leon:leftText="我的位置"
         leon:rightStyle="iconSwitch" />
 
