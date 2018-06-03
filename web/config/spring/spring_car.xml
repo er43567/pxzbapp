@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 测试注入action -->
+	<bean id="test" class="util.JunitTest" scope="prototype">
+		<property name="carService" ref="carService"></property>
+	</bean>
+
+	<!-- Aciton注入servcie -->
+	<bean id="carAction" class="com.zbms.carinfomanage.action.carAction"
+		scope="prototype">
+		<property name="carService" ref="carService"></property>
+	</bean>
+
+	<!-- service注入dao层 -->
+	<bean id="carService"
+		class="com.zbms.carinfomanage.service.impl.carServiceImpl">
+		<property name="carDao" ref="carDao"></property>
+	</bean>
+
+	<!-- dao注入sessionFactory -->
+	<bean id="carDao" class="com.zbms.carinfomanage.dao.impl.carDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+</beans>

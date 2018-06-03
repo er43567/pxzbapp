@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pxxy.liangming.pazbapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.RankTwo.Main2Activity" />
+        <activity android:name=".Activity.zb.DjzbActivity"></activity>
+        <activity android:name=".Activity.zb.DljtActivity" />
+        <activity android:name=".Activity.zb.FhzbActivity" />
+        <activity android:name=".Activity.zb.FzzbActivity" />
+        <activity android:name=".Activity.zb.JsdjActivity" />
+        <activity android:name=".Activity.zb.JyzbActivity" />
+        <activity android:name=".Activity.zb.WqjxActivity" />
+        <activity android:name=".Activity.zb.ZbInfoActivity" />
+        <activity android:name=".Activity.car.CarActivity"></activity>
+    </application>
+
+</manifest>

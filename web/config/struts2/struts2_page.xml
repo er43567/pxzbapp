@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="page" namespace="/Page" extends="struts-default">
+		<action name="*" class="com.zbms.system.action.PageAction"
+			method="{1}">
+			<result name="page_index">/WEB-INF/views/index.jsp</result>
+			<result name="page_nav">/WEB-INF/views/top_left.jsp</result>
+		</action>
+	</package>
+</struts>

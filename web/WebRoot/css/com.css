@@ -1,0 +1,140 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 条件筛选样式 */
+.form-control {
+	width: 150px;
+	display: inline-block !important;
+}
+
+#search {
+	margin-top: 5px;
+}
+
+#all_options {
+	width: 150px;
+	height: 32px;
+}
+
+.input_div {
+	display: inline-block !important;
+	width: 190px;
+}
+
+.dateinput_div {
+	display: inline-block !important;
+	width: 350px;
+}
+
+.input_div input {
+	width: 150px !important;
+	height: 32px;
+}
+
+.dateinput_div input {
+	width: 150px !important;
+	height: 32px;
+}
+
+.After_div {
+	display: inline-block !important;
+}
+
+.Atfer_li {
+	background-color: #425164;
+}
+
+.cancel {
+	background-color: whitesmoke;
+	height: 28px;
+	width: 48px;
+	background-color: #42A5F5;
+	text-align: center;
+}
+
+.end-button {
+	float: right;
+}
+
+/* 表格样式 */
+.table th, tbody {
+	font-size: 14px;
+	color: #444444;
+	text-align: center;
+}
+
+.table td {
+	max-width: 200px;
+	overflow: hidden;
+}
+
+.table button {
+	width: 25px;
+	height: 25px;
+	margin-left: 5px;
+}
+
+.title {
+	height: 1px;
+	border-top: 1px solid #CDCDCD;
+	height: 20px !important;
+	text-align: center;
+}
+
+.title td {
+	position: relative;
+	left: -3%;
+	top: -20px;
+	background: #fff;
+	padding: 0 20px;
+	font-size: 18px;
+	color: #42A5F5;
+}
+
+.user-table {
+	width: 100% !important;
+	table-layout: fixed !important;
+}
+
+.com-table {
+	margin: 0 auto;
+	width: 700px !important;
+}
+
+.com-table input {
+	width: 250px;
+	/* margin-left: -40%; */
+}
+
+.com-table select {
+	width: 250px;
+	/* margin-left: -40%; */
+}
+
+.com-table tr:nth-child(odd) td {
+	width: 100px;
+}
+
+.tab tr {
+	height: 40px !important;
+}
+
+#modal-content {
+	padding: 0;
+}
+
+.modal-dialog {
+	width: 800px !important;
+}
+
+.tab_content {
+	width: 100%;
+	max-height: calc(100vh - 15.6rem);
+	overflow: auto;
+}
+
+#page a:hover {
+	cursor: pointer;
+}

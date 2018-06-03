@@ -1,0 +1,273 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8FF"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    >
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginLeft="25dp"
+    android:layout_marginTop="20dp"
+    >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="281dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="防护装备"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <!-- 装备名称行 -->
+
+    <!-- 第一行 -->
+
+    <LinearLayout
+        android:id="@+id/tabletwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="#F8F8FF"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp" >
+
+        <TextView
+            android:id="@+id/textViewtable1"
+            android:layout_width="171dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="勤务头盔"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="17sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupTableOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/btnTrueOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="是" />
+
+            <RadioButton
+                android:id="@+id/btnFalseOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="否" />
+        </RadioGroup>
+    </LinearLayout>
+    <!-- 第二行 -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F8F8FF"
+        android:orientation="horizontal"
+        tools:context=".MainActivity" >
+
+        <TextView
+            android:id="@+id/textViewtable2"
+            android:layout_width="171dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="防弹防刺背心"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="17sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupTabletwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/btnTruetwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="是" />
+
+            <RadioButton
+                android:id="@+id/btnFalsetwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="否" />
+        </RadioGroup>
+    </LinearLayout>
+    <!-- 第三行 -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F8F8FF"
+        android:orientation="horizontal"
+        tools:context=".MainActivity" >
+
+        <TextView
+            android:id="@+id/textViewtable3"
+            android:layout_width="171dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="臂盾"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="17sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupTablethree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/btnTruethree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="是" />
+
+            <RadioButton
+                android:id="@+id/btnFalsethree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="否" />
+        </RadioGroup>
+    </LinearLayout>
+    <!-- 第四行 -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F8F8FF"
+        android:orientation="horizontal"
+        tools:context=".MainActivity" >
+
+        <TextView
+            android:id="@+id/textViewtable4"
+            android:layout_width="171dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="防弹头盔"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="17sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupTablefour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/btnTruefour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="是" />
+
+            <RadioButton
+                android:id="@+id/btnFalsefour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="否" />
+        </RadioGroup>
+    </LinearLayout>
+    <!-- 第5行 -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:context=".MainActivity" >
+
+        <TextView
+            android:id="@+id/textViewtable5s"
+            android:layout_width="171dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="防暴盾牌"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="17sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupTablefive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/btnTruefive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="是" />
+
+            <RadioButton
+                android:id="@+id/btnFalsefive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="否" />
+        </RadioGroup>
+    </LinearLayout>
+    <!-- 第6行 -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:context=".MainActivity" >
+
+        <TextView
+            android:id="@+id/textViewtable6"
+            android:layout_width="171dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="丁字棍"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="17sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupTablesex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/btnTruesex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="是" />
+
+            <RadioButton
+                android:id="@+id/btnFalsesex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="否" />
+        </RadioGroup>
+    </LinearLayout>
+    <!-- 按钮行 -->
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#6495ED"
+        android:textColor="#F8F8FF"
+        android:height="50dp"
+        android:text="确认"
+        android:textSize="20sp" />
+</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 测试注入action -->
+
+	<bean id="test" class="util.JunitTest" scope="prototype">
+		<property name="adminService" ref="adminService"></property>
+	</bean>
+
+	<!-- Aciton注入servcie -->
+
+	<bean id="adminAction" class="com.zbms.zb.action.AdminAction"
+		scope="prototype">
+		<property name="adminService" ref="adminService"></property>
+	</bean>
+
+
+
+	<!-- service注入dao层 -->
+
+	<bean id="adminService"
+		class="com.zbms.zb.service.impl.AdminServiceImpl">
+		<property name="adminDao" ref="adminDao"></property>
+	</bean>
+
+
+
+
+	<!-- dao注入sessionFactory -->
+
+	<bean id="adminDao" class="com.zbms.zb.dao.impl.AdminDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+</beans>
