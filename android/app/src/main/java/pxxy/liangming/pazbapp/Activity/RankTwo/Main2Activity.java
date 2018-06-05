@@ -32,4 +32,6 @@ public class Main2Activity extends AppCompatActivity {
         FragmentTabAdapter tabAdapter = new FragmentTabAdapter(this, fragments, R.id.tab_content, rgs);
 
     }
+
+
 }
