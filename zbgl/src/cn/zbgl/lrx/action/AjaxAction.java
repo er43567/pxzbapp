@@ -3,8 +3,6 @@ package cn.zbgl.lrx.action;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Namespace;
@@ -19,7 +17,6 @@ import cn.zbgl.lrx.service.LrxService;
 
 @Namespace("/")
 @ParentPackage("json-default")//非json时，则为"struts-default"
-
 @Controller("ajaxAction")
 @Scope("prototype")
 public class AjaxAction extends CommonAction {
@@ -90,7 +87,6 @@ public class AjaxAction extends CommonAction {
 		System.out.println(userLi.size());
 		return aa;
 	}
-	
 	
 	@Override
 	public String getResult() {
