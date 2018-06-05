@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.leon.lib.settingview.LSettingItem;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -70,63 +72,65 @@ TitleBar titleBarB;
         titleBarB=(TitleBar) getView().findViewById(R.id.title_barB);
         titleBarB.setTitle("装备管理"+"\n["+form+"]");
 
-        final Intent toDjzb =new Intent(getContext(), DjzbActivity.class);
-        final Intent toFhzb =new Intent(getContext(), FhzbActivity.class);
+        LSettingItem djzb = (LSettingItem) getView().findViewById(R.id.djzb);
+        LSettingItem fhzb = (LSettingItem) getView().findViewById(R.id.fhzb);
+        LSettingItem jyzb = (LSettingItem) getView().findViewById(R.id.jyzb);
+        LSettingItem dljt = (LSettingItem) getView().findViewById(R.id.dljt);
+        LSettingItem wqjx = (LSettingItem) getView().findViewById(R.id.wqjx);
+        LSettingItem jsdj = (LSettingItem) getView().findViewById(R.id.jsdj);
+        LSettingItem fzzb = (LSettingItem) getView().findViewById(R.id.fzzb);
+        LSettingItem car = (LSettingItem) getView().findViewById(R.id.car);
+
+        final Intent toDjzb =new Intent(getContext(),DjzbActivity.class);
+        final Intent toFhzb =new Intent(getContext(),FhzbActivity.class);
         final Intent toJyzb =new Intent(getContext(),JyzbActivity.class);
         final Intent toDljt =new Intent(getContext(),DljtActivity.class);
         final Intent toWqjx =new Intent(getContext(),WqjxActivity.class);
         final Intent toJsdj =new Intent(getContext(),JsdjActivity.class);
         final Intent toFzzb =new Intent(getContext(),FzzbActivity.class);
-        final Intent toClgl =new Intent(getContext(), CarActivity.class);
-        this.getView().findViewById(R.id.dj).setOnClickListener(new View.OnClickListener() {
+        final Intent toClgl =new Intent(getContext(),CarActivity.class);
+        djzb.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
             @Override
-            public void onClick(View v) {
+            public void click() {
                 startActivity(toDjzb);
             }
         });
-        this.getView().findViewById(R.id.fh).setOnClickListener(new View.OnClickListener() {
+        fhzb.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
             @Override
-            public void onClick(View v) {
+            public void click() {
                 startActivity(toFhzb);
             }
         });
-        this.getView().findViewById(R.id.jy).setOnClickListener(new View.OnClickListener() {
+        jyzb.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
             @Override
-            public void onClick(View v) {
+            public void click() {
                 startActivity(toJyzb);
             }
         });
-        this.getView().findViewById(R.id.dl).setOnClickListener(new View.OnClickListener() {
+        dljt.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
             @Override
-            public void onClick(View v) {
+            public void click() {
                 startActivity(toDljt);
             }
         });
-        this.getView().findViewById(R.id.wq).setOnClickListener(new View.OnClickListener() {
+        wqjx.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
             @Override
-            public void onClick(View v) {
+            public void click() {
                 startActivity(toWqjx);
             }
         });
-        this.getView().findViewById(R.id.js).setOnClickListener(new View.OnClickListener() {
+        jsdj.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
             @Override
-            public void onClick(View v) {
+            public void click() {
                 startActivity(toJsdj);
             }
         });
-        this.getView().findViewById(R.id.fz).setOnClickListener(new View.OnClickListener() {
+        fzzb.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
             @Override
-            public void onClick(View v) {
+            public void click() {
                 startActivity(toFzzb);
             }
         });
-        this.getView().findViewById(R.id.cl).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(toClgl);
-            }
-        });
-
         /*
         给fagment按钮添加事件*/
 /*

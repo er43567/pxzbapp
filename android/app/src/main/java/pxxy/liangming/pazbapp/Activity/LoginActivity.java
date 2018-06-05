@@ -45,11 +45,11 @@ public class LoginActivity extends Activity {
                 Intent intent =new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
-                Toast.makeText(getApplicationContext(),"登陆成功",Toast.LENGTH_SHORT).show();
+
             }
         });
 
-        NetAdapterLrx.loadDemoData("aslfsadf", new NetManager.INetCallback() {
+        NetAdapterLrx.loadDemoData("qwewq", new NetManager.INetCallback() {
             @Override
             public void onCallback(String result, JSONObject jsonObject) {
                 Dialog.showDialog(LoginActivity.this, result + "");
@@ -58,10 +58,13 @@ public class LoginActivity extends Activity {
                 JSONObject item = (JSONObject) ja.opt(0);
                 Dialog.showDialog(LoginActivity.this,  item.optString("userId"));
 
-                if (jsonObject != null)
+                if (jsonObject != null) {
                     Dialog.showDialog(LoginActivity.this, jsonObject.toString());
-                else
-                    Dialog.showDialog(LoginActivity.this, "NULL");
+                    Toast.makeText(getApplicationContext(),"服务器：登陆成功",Toast.LENGTH_SHORT).show();
+                }
+
+                else {
+                    Dialog.showDialog(LoginActivity.this, "NULL");}
 
 
             }

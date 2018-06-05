@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
 
         } else {
-            Toast.makeText(MainActivity.this, "再按一次退出登陆", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "再按一次退出", Toast.LENGTH_SHORT).show();
             firstPressedTime = System.currentTimeMillis();
         }
     }

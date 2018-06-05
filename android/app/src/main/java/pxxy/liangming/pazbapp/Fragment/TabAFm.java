@@ -56,7 +56,7 @@ public class TabAFm extends Fragment{
         System.out.println(date);
         SimpleDateFormat sd=new SimpleDateFormat("yyyy-MM-dd");
         String form=sd.format(date);
-        Toast.makeText(getContext(),"加载完成",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(),"数据加载完成",Toast.LENGTH_SHORT).show();
 
         titleBarA=(TitleBar) getActivity().findViewById(R.id.title_barA);
         titleBarA.setTitle("今日公告"+"\n["+form+"]");

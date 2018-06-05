@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:leon="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-
-    >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
         <pxxy.liangming.pazbapp.Titlebar.TitleBar
             android:id="@+id/title_barB"
             android:layout_width="match_parent"
@@ -17,160 +16,90 @@
 
         </pxxy.liangming.pazbapp.Titlebar.TitleBar>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="center_horizontal">
+            android:layout_marginTop="15dp"
+            android:background="#fff"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/dj"
-            android:layout_width="wrap_content"
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="UserName"
+                    android:textSize="16sp" />
+        </LinearLayout>
+
+
+
+        <com.leon.lib.settingview.LSettingItem
+            android:id="@+id/djzb"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="单警装备"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/fh"
-            android:layout_width="wrap_content"
+            leon:leftText="单警装备"
+          />
+        <com.leon.lib.settingview.LSettingItem
+            android:id="@+id/fhzb"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="防护装备"
-            android:textSize="20sp" />
+            leon:leftText="防护装备"
+          />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/jy"
-            android:layout_width="wrap_content"
+        <com.leon.lib.settingview.LSettingItem
+            android:id="@+id/jyzb"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="救援装备"
-            android:textSize="20sp" />
+            leon:leftText="救援装备"
+          />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/dl"
-            android:layout_width="wrap_content"
+        <com.leon.lib.settingview.LSettingItem
+            android:id="@+id/dljt"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="道路交通"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/wq"
-            android:layout_width="wrap_content"
+            leon:leftText="道路交通"
+          />
+        <com.leon.lib.settingview.LSettingItem
+            android:id="@+id/wqjx"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="武器警械"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/js"
-            android:layout_width="wrap_content"
+            leon:leftText="武器警械"
+          />
+        <com.leon.lib.settingview.LSettingItem
+            android:id="@+id/jsdj"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="警示灯具"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/fz"
-            android:layout_width="wrap_content"
+            leon:leftText="警示灯具"
+          />
+        <com.leon.lib.settingview.LSettingItem
+            android:id="@+id/fzzb"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="辅助装备"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/cl"
-            android:layout_width="wrap_content"
+            leon:leftText="辅助装备"
+  />
+        <com.leon.lib.settingview.LSettingItem
+            android:id="@+id/car"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="车辆管理"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/gd"
-            android:layout_width="wrap_content"
+            leon:leftText="车辆管理（开发）"
+/>
+        <Button
+            android:id="@+id/commit"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:text="高端装备申请"
-            android:textSize="20sp" />
 
-    </LinearLayout>
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="10dp"
+            android:background="#3a9fff"
+            android:text="提交"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
 
 </LinearLayout>
-
