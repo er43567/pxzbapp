@@ -24,6 +24,7 @@ import pxxy.liangming.pazbapp.R;
 import pxxy.liangming.pazbapp.SplashActivity;
 import pxxy.liangming.pazbapp.Titlebar.TitleBar;
 import pxxy.liangming.pazbapp.Util.Dialog;
+import pxxy.liangming.pazbapp.Util.SpUtil;
 import pxxy.liangming.pazbapp.net.NetAdapterLrx;
 import pxxy.liangming.pazbapp.net.NetManager;
 
@@ -39,17 +40,35 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
 
         Button login =findViewById(R.id.loginBtn);
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-                Toast.makeText(getApplicationContext(),"登陆成功",Toast.LENGTH_SHORT).show();
+                EditText editText = findViewById(R.id.et_userId);
+                EditText pswText = findViewById(R.id.et_pass);
+                final String userId = editText.getText().toString();
+                final String psw = pswText.getText().toString();
+
+                NetAdapterLrx.login(userId , psw, new NetManager.INetCallback() {
+                    @Override
+                    public void onCallback(String result, JSONObject jsonObject) {
+                        if ("success".equals(result)) {
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+
+                            finish();
+                        } else {
+                            Dialog.showDialog(LoginActivity.this, result + "");
+                        }
+                        //TODO 存账号密码
+
+                    }
+                });
+
             }
         });
 
-        NetAdapterLrx.loadDemoData("aslfsadf", new NetManager.INetCallback() {
+        /*NetAdapterLrx.loadDemoData("aslfsadf", new NetManager.INetCallback() {
             @Override
             public void onCallback(String result, JSONObject jsonObject) {
                 Dialog.showDialog(LoginActivity.this, result + "");
@@ -58,14 +77,19 @@ public class LoginActivity extends Activity {
                 JSONObject item = (JSONObject) ja.opt(0);
                 Dialog.showDialog(LoginActivity.this,  item.optString("userId"));
 
+
+                if ("success".equals(result)) {
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+
                 if (jsonObject != null)
                     Dialog.showDialog(LoginActivity.this, jsonObject.toString());
                 else
                     Dialog.showDialog(LoginActivity.this, "NULL");
 
-
             }
-        });
+        });*/
 
     }
 /*    private static final String TAG = "login";

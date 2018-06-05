@@ -42,11 +42,11 @@ public class AjaxAction extends CommonAction {
 	
 	/*@Action( 
             value="login",  
-            results={ 
+            results={
                     @Result(name="success",location="/success.jsp",type="redirect"),  
                     @Result(name="login",location="/login.jsp",type="redirect"),  
                     @Result(name="error",location="/error.jsp",type="redirect")  
-            },  
+            },
             interceptorRefs={ //��ʾ����������  
                     @InterceptorRef("defaultStack"),  
                     @InterceptorRef("timer")  
@@ -56,10 +56,19 @@ public class AjaxAction extends CommonAction {
             }
     )  */
 	
-	@Action(value="/login")
+	@Action(value="/login"
+			,results={@Result(type="json")}
+			,params={"contentType", "text/html"})
 	public String login() {
-		System.out.println("login");
-		saveLogin(user);
+		System.out.println(user);
+		if ("admin".equals(user.getUserId())) {
+			if (!"123".equals(user.getUserPsw())) {
+				setResult("psw err");
+			}
+		} else {
+			setResult("did not registed");
+		}
+		System.out.println(getResult());
 		return aa;
 	}
 	
@@ -77,8 +86,6 @@ public class AjaxAction extends CommonAction {
 			u.setUserName("userName"+i);
 			userLi.add(u);
 		}
-		
-		setResult("asdf");
 		
 		System.out.println(userLi.size());
 		return aa;
