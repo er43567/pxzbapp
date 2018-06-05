@@ -39,15 +39,16 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button login = findViewById(R.id.loginBtn);
+        Button login =findViewById(R.id.loginBtn);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 EditText editText = findViewById(R.id.et_userId);
                 EditText pswText = findViewById(R.id.et_pass);
-                String userId = editText.getText().toString();
-                String psw = pswText.getText().toString();
+                final String userId = editText.getText().toString();
+                final String psw = pswText.getText().toString();
 
                 NetAdapterLrx.login(userId , psw, new NetManager.INetCallback() {
                     @Override
@@ -55,18 +56,22 @@ public class LoginActivity extends Activity {
                         if ("success".equals(result)) {
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
+
                             finish();
                         } else {
                             Dialog.showDialog(LoginActivity.this, result + "");
                         }
                         //TODO 存账号密码
+
                     }
                 });
 
             }
         });
 
+
         /*NetAdapterLrx.loadDemoData("aslfsadf", new NetManager.INetCallback() {
+
             @Override
             public void onCallback(String result, JSONObject jsonObject) {
                 Dialog.showDialog(LoginActivity.this, result + "");
@@ -76,15 +81,20 @@ public class LoginActivity extends Activity {
                 Dialog.showDialog(LoginActivity.this,  item.optString("userId"));
 
 
+
                 if ("success".equals(result)) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 }
 
                 if (jsonObject != null)
+
                     Dialog.showDialog(LoginActivity.this, jsonObject.toString());
-                else
-                    Dialog.showDialog(LoginActivity.this, "NULL");
+                    Toast.makeText(getApplicationContext(),"服务器：登陆成功",Toast.LENGTH_SHORT).show();
+                }
+
+                else {
+                    Dialog.showDialog(LoginActivity.this, "NULL");}
 
             }
         });*/

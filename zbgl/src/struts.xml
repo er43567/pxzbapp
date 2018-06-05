@@ -11,7 +11,7 @@
 	<!-- struts2的action对象 也来源于spring的IoC容器 -->
 	<constant name="struts.objectFactory" value="spring"></constant>
 	
-	<!-- <package name="user" namespace="/" extends ="struts-default">
+<!-- 	<package name="user" namespace="/" extends ="struts-default">
 		<action name="LrxDemoAction" class="cn.examsys.lrx.action.DemoAction">
 			<result name="demo">/pages/lrx/demo.jsp</result>
 		</action>

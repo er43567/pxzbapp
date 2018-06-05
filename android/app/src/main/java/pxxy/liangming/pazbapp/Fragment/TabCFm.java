@@ -8,12 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import pxxy.liangming.pazbapp.R;
+import pxxy.liangming.pazbapp.Titlebar.TitleBar;
 
 /**
  * Created by Liangming on 2018/5/17 0020.
  */
 
 public class TabCFm extends Fragment{
+    TitleBar titleBarC;
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -41,6 +43,8 @@ public class TabCFm extends Fragment{
     @Override
     public void onStart() {
         super.onStart();
+        titleBarC=(TitleBar) getView().findViewById(R.id.title_barC);
+        titleBarC.setTitle("我的账户");
         System.out.println("CCCCCCCCCC____onStart");
     }
 

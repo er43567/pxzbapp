@@ -22,6 +22,4 @@ public class NetAdapterLrx extends NetAdapter {
                 , new String[]{userId, psw}, callback);
     }
 
-
-
 }

@@ -1,4 +1,5 @@
 package pxxy.liangming.pazbapp.Fragment;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.app.Activity;
 import android.os.Bundle;
@@ -20,7 +21,7 @@ import static pxxy.liangming.pazbapp.Util.DateUtil.getDay;
  */
 
 public class TabAFm extends Fragment{
-
+    TitleBar titleBarA,titleBarB,titleBarC;
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -55,7 +56,12 @@ public class TabAFm extends Fragment{
         System.out.println(date);
         SimpleDateFormat sd=new SimpleDateFormat("yyyy-MM-dd");
         String form=sd.format(date);
-        Toast.makeText(getContext(),"今天是"+form,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(),"数据加载完成",Toast.LENGTH_SHORT).show();
+
+        titleBarA=(TitleBar) getActivity().findViewById(R.id.title_barA);
+        titleBarA.setTitle("今日公告"+"\n["+form+"]");
+
+        titleBarA.setTitleColor(Color.WHITE);
 
         System.out.println("AAAAAAAAAA____onActivityCreated");
     }

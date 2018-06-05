@@ -10,4 +10,8 @@
     <style parent="Theme.AppCompat.Light.NoActionBar" name="AppTheme">
         <!-- Customize your theme here. -->
     </style>
+    <style name="MyCheckBox" parent="AppTheme">
+        <item name="colorControlNormal">#CCCCCC</item>
+        <item name="colorControlActivated">#0099CC</item>
+    </style>
 </resources>
