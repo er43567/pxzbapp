@@ -204,7 +204,7 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTablefive"
+            android:id="@+id/radioGroupTable5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
