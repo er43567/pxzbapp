@@ -53,7 +53,7 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTableOne"
+            android:id="@+id/rg_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -91,7 +91,7 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTabletwo"
+            android:id="@+id/rg_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -129,7 +129,7 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTablethree"
+            android:id="@+id/rg_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -167,7 +167,7 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTablefour"
+            android:id="@+id/rg_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -204,7 +204,7 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTablefive"
+            android:id="@+id/rg_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -241,7 +241,7 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTablesex"
+            android:id="@+id/rg_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -264,6 +264,8 @@
 
     <Button
         android:id="@+id/submit"
+        android:onClick="onClick"
+        android:clickable="true"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

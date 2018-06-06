@@ -11,4 +11,5 @@ public class LmDaoImpl extends DaoAdapter implements LmDao {
 	public void CheckDao(){
 		System.out.println("CheckDao，hibernateTemplate = " + hibernateTemplate);
 	}
+	
 }

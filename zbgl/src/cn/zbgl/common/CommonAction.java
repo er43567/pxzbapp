@@ -6,6 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
+import cn.zbgl.bean.User;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 public abstract class CommonAction extends ActionSupport {
@@ -20,7 +22,7 @@ public abstract class CommonAction extends ActionSupport {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public <T> T getSessionUser() {
+	public <T extends User> T getSessionUser() {
 		return (T) session.getAttribute("user");
 	}
 	
