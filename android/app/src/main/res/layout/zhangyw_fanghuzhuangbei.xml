@@ -53,7 +53,7 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTableOne"
+            android:id="@+id/radioGroupTable1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -91,7 +91,7 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTabletwo"
+            android:id="@+id/radioGroupTable2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -129,7 +129,7 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTablethree"
+            android:id="@+id/radioGroupTable3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -167,7 +167,7 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTablefour"
+            android:id="@+id/radioGroup4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -210,7 +210,7 @@
             android:orientation="horizontal" >
 
             <RadioButton
-                android:id="@+id/btnTruefive"
+                android:id="@+id/btnTrue5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
@@ -241,20 +241,20 @@
             android:textSize="17sp" />
 
         <RadioGroup
-            android:id="@+id/radioGroupTablesex"
+            android:id="@+id/radioGroupTable6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
 
             <RadioButton
-                android:id="@+id/btnTruesex"
+                android:id="@+id/btnTruesix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="是" />
 
             <RadioButton
-                android:id="@+id/btnFalsesex"
+                android:id="@+id/btnFalsesix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="否" />
