@@ -67,9 +67,4 @@ public class Fhzb {
 	public void setChecktime(String checktime) {
 		this.checktime = checktime;
 	}
-	@Override
-	public String toString() {
-		return "Fhzb [checkId=" + checkId + ", qwtk=" + qwtk + ", fdbx=" + fdbx + ", bd=" + bd + ", fdtk=" + fdtk
-				+ ", fbdp=" + fbdp + ", dzg=" + dzg + ", checktime=" + checktime + "]";
-	}
 }
