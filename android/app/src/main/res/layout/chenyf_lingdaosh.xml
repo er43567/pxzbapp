@@ -3,8 +3,19 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
- >
 
+
+
+>
+	<pxxy.liangming.pazbapp.Titlebar.TitleBar
+		android:id="@+id/title_barC"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/colorTB"
+		>
+
+
+	</pxxy.liangming.pazbapp.Titlebar.TitleBar>
     <TextView
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
