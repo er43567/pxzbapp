@@ -20,6 +20,7 @@ public class FhzbActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplication(),"数据保存成功",Toast.LENGTH_SHORT).show();
+
             }
         });
     }
