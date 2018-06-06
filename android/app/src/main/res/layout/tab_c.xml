@@ -62,7 +62,7 @@ android:layout_marginTop="20dp"
         leon:leftText="姓名"
         leon:rightStyle="iconHide"
         leon:rightText="杨传君"
-        leon:leftIcon="1"/>
+ />
     <com.leon.lib.settingview.LSettingItem
         android:id="@+id/belongs"
         android:layout_width="match_parent"
@@ -70,7 +70,7 @@ android:layout_marginTop="20dp"
         leon:rightText="特巡警支队"
         leon:leftText="所属分局"
         leon:rightStyle="iconHide"
-        leon:leftIcon="0"/>
+/>
 
 
     <com.leon.lib.settingview.LSettingItem
@@ -80,7 +80,7 @@ android:layout_marginTop="20dp"
         leon:rightText="18779913896"
         leon:leftText="手机号"
         leon:rightStyle="iconHide"
-        leon:leftIcon="0"/>
+/>
 
 
     <com.leon.lib.settingview.LSettingItem
@@ -88,7 +88,7 @@ android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         leon:leftText="修改密码"
-        leon:leftIcon="0"/>
+/>
     <Button
         android:id="@+id/loginBtn"
         android:layout_width="fill_parent"
