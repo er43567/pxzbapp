@@ -57,7 +57,6 @@
 
         <RadioGroup
 
-            android:id="@+id/radioGroup"
 
             android:layout_width="wrap_content"
 
