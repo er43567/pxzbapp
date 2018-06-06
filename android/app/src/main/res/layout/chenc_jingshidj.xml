@@ -9,15 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
 >
-    <pxxy.liangming.pazbapp.Titlebar.TitleBar
-        android:id="@+id/title_barC"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorTB"
-        >
 
-
-    </pxxy.liangming.pazbapp.Titlebar.TitleBar>
     <TextView
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"

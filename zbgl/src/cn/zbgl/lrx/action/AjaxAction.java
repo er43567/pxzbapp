@@ -1,4 +1,4 @@
-package cn.zbgl.lm.action;
+package cn.zbgl.lrx.action;
 
 import java.util.ArrayList;
 import java.util.List;
