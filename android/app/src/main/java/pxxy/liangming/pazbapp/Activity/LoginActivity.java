@@ -50,9 +50,16 @@ public class LoginActivity extends Activity {
                 final String userId = editText.getText().toString();
                 final String psw = pswText.getText().toString();
 
+
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+
+
                 NetAdapterLrx.login(userId , psw, new NetManager.INetCallback() {
                     @Override
                     public void onCallback(String result, JSONObject jsonObject) {
+
                         if ("success".equals(result)) {
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
