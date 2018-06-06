@@ -56,7 +56,7 @@ public class LoginActivity extends Activity {
                         if ("success".equals(result)) {
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
-                            
+
                             finish();
                         } else {
                             Dialog.showDialog(LoginActivity.this, result + "");
