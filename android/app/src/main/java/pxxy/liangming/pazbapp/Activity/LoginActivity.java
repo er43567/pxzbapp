@@ -2,6 +2,7 @@ package pxxy.liangming.pazbapp.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,17 +10,22 @@ import android.telecom.Call;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
+import pxxy.liangming.pazbapp.Activity.RankTwo.Main2Activity;
 import pxxy.liangming.pazbapp.R;
 import pxxy.liangming.pazbapp.SplashActivity;
 import pxxy.liangming.pazbapp.Titlebar.TitleBar;
@@ -30,29 +36,83 @@ import pxxy.liangming.pazbapp.net.NetManager;
 
 /**
  * Created by Liangming on 2018/5/12 0020.
+ * 登陆界面
  */
 
 public class LoginActivity extends Activity {
-
+    private static final String fileName = "login";//定义保存的文件的名称
+    private Spinner mSpinner;
+    private String role=null;
+    private String userId=null;
+    private String pswd=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        //加载完界面以后，获取控件
         Button login =findViewById(R.id.loginBtn);
+        EditText editText = findViewById(R.id.et_userId);
+        EditText pswText = findViewById(R.id.et_pass);
+
+//新建一个SP，检查是否有用户名密码存在，在则自动登陆
+            SharedPreferences shareGet = super.getSharedPreferences(fileName,
+                    MODE_PRIVATE);
+            editText.setText(shareGet.getString("user", "null"));
+            pswText.setText(shareGet.getString("pswd", ""));
+
+            Toast.makeText(getApplicationContext()
+                    ,"user:"+shareGet.getString("user", "")+"/"+shareGet.getString("pswd", "")
+                    ,Toast.LENGTH_SHORT).show();
+
+
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 EditText editText = findViewById(R.id.et_userId);
                 EditText pswText = findViewById(R.id.et_pass);
-                final String userId = editText.getText().toString();
-                final String psw = pswText.getText().toString();
 
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                userId = editText.getText().toString();
+                pswd = pswText.getText().toString();
+
+
+                mSpinner = (Spinner) findViewById(R.id.spinner);
+
+                String []sss=new String[]{"请选择账户","一级民警","二级"};
+
+                //设置ArrayAdapter内置的item样式-这里是单行显示样式
+                final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,sss);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+                //设置Adapter了
+                mSpinner.setAdapter(adapter);
+                //监听Spinner的操作
+                mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    //选取时候的操作
+
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        Toast.makeText(getApplication(),"itemSelected",Toast.LENGTH_SHORT).show();
+                        role= (String) mSpinner.getSelectedItem();
+                    }
+                    //没被选取时的操作
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        Toast.makeText(getApplication(),"noThingSelected",Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+                SharedPreferences share = getSharedPreferences(fileName, MODE_PRIVATE);
+                SharedPreferences.Editor editor = share.edit();
+                editor.putString("user", userId);
+                editor.putString("pswd", pswd);
+                editor.putString("role", role);
+                editor.commit();
+
+                Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
+                startActivity(intent);
+                finish();
+
 
 
                 NetAdapterLrx.login(userId , psw, new NetManager.INetCallback() {
@@ -64,6 +124,7 @@ public class LoginActivity extends Activity {
                             startActivity(intent);
 
                             finish();
+
                         } else {
                             Dialog.showDialog(LoginActivity.this, result + "");
                         }
@@ -75,6 +136,11 @@ public class LoginActivity extends Activity {
             }
         });
 
+
+
+
+
+    }
 
         /*NetAdapterLrx.loadDemoData("aslfsadf", new NetManager.INetCallback() {
 
@@ -105,7 +171,7 @@ public class LoginActivity extends Activity {
             }
         });*/
 
-    }
+
 /*    private static final String TAG = "login";
     Button loginBtn = null;
     EditText useridEt = null;
