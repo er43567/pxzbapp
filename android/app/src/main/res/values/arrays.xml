@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="role">
+      <item>请选择账号类型</item>
+        <item>一级民警</item>
+        <item>二级大队长</item>
+        <item>三级保障科</item>
+    </string-array>
+
+</resources>

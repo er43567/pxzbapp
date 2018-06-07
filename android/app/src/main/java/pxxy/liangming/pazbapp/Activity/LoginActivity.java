@@ -45,6 +45,7 @@ public class LoginActivity extends Activity {
     private String role=null;
     private String userId=null;
     private String pswd=null;
+    private String select=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,21 +80,17 @@ public class LoginActivity extends Activity {
 
                 mSpinner = (Spinner) findViewById(R.id.spinner);
 
-                String []sss=new String[]{"请选择账户","一级民警","二级"};
-
                 //设置ArrayAdapter内置的item样式-这里是单行显示样式
-                final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,sss);
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-                //设置Adapter了
-                mSpinner.setAdapter(adapter);
+
                 //监听Spinner的操作
                 mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     //选取时候的操作
 
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        Toast.makeText(getApplication(),"itemSelected",Toast.LENGTH_SHORT).show();
                         role= (String) mSpinner.getSelectedItem();
+                        Toast.makeText(getApplication(),"itemSelected:"+role,Toast.LENGTH_SHORT).show();
+
                     }
                     //没被选取时的操作
                     @Override
@@ -115,7 +112,7 @@ public class LoginActivity extends Activity {
 
 
 
-                NetAdapterLrx.login(userId , psw, new NetManager.INetCallback() {
+                NetAdapterLrx.login(userId , pswd, new NetManager.INetCallback() {
                     @Override
                     public void onCallback(String result, JSONObject jsonObject) {
 

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:leon="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <pxxy.liangming.pazbapp.Titlebar.TitleBar
+        android:id="@+id/title_barB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTB"
+        >
+
+
+    </pxxy.liangming.pazbapp.Titlebar.TitleBar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:layout_marginTop="15dp"
+        android:background="#fff"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="UserName"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+
+    <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/djzb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        leon:leftText="单警装备"
+        />
+    <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/fhzb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        leon:leftText="防护装备"
+        />
+
+    <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/jyzb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        leon:leftText="救援装备"
+        />
+
+    <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/dljt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        leon:leftText="道路交通"
+        />
+    <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/wqjx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        leon:leftText="武器警械"
+        />
+    <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/jsdj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        leon:leftText="警示灯具"
+        />
+    <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/fzzb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        leon:leftText="辅助装备"
+        />
+    <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/car"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        leon:leftText="车辆管理（开发）"
+        />
+    <Button
+        android:id="@+id/commit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="10dp"
+        android:background="#3a9fff"
+        android:text="提交"
+        android:textColor="#ffffff"
+        android:textSize="18dp" />
+
+</LinearLayout>

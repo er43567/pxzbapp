@@ -19,7 +19,7 @@
         >
 
         <FrameLayout
-            android:id="@+id/tab_content"
+            android:id="@+id/tab2_content"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="1.0"
@@ -27,7 +27,7 @@
             />
 
         <RadioGroup
-            android:id="@+id/tabs_rg"
+            android:id="@+id/tabs2_rg"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
