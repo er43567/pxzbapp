@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.leon.lib.settingview.LSettingItem;
@@ -33,8 +34,8 @@ import pxxy.liangming.pazbapp.Titlebar.TitleBar;
  */
 
 public class Tab2BFm extends Fragment {
-    TitleBar titleBarB;
-
+    private TitleBar titleBarB;
+    private Button refresh;
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -50,7 +51,7 @@ public class Tab2BFm extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         System.out.println("BBBBBBBBBBB____onCreateView");
-        return inflater.inflate(R.layout.tab_b, container, false);
+        return inflater.inflate(R.layout.tab2_b, container, false);
     }
 
     @Override
@@ -64,7 +65,7 @@ public class Tab2BFm extends Fragment {
         SimpleDateFormat sd=new SimpleDateFormat("yyyy-MM-dd");
         String form=sd.format(date);
 
-        titleBarB=(TitleBar) getView().findViewById(R.id.title_barB);
+        titleBarB=(TitleBar) getView().findViewById(R.id.title2_barB);
         titleBarB.setTitle("装备情况检查"+"\n["+form+"]");
 
  /*       LSettingItem djzb = (LSettingItem) getView().findViewById(R.id.djzb);

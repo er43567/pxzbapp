@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     // System.currentTimeMillis() 当前系统的时间
     @Override
     public void onBackPressed() {
-        if (System.currentTimeMillis() - firstPressedTime < 2000) {
+        if (System.currentTimeMillis() - firstPressedTime < 3000) {
             super.onBackPressed();
 
         } else {

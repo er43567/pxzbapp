@@ -62,7 +62,7 @@ public class Tab2AFm extends Fragment {
         String form=sd.format(date);
         Toast.makeText(getContext(),"数据加载完成",Toast.LENGTH_SHORT).show();
 
-        titleBarA=(TitleBar) getActivity().findViewById(R.id.title_barA);
+        titleBarA=(TitleBar) getActivity().findViewById(R.id.title2_barA);
         titleBarA.setTitle("大队状态"+"\n["+form+"]");
 
         titleBarA.setTitleColor(Color.WHITE);

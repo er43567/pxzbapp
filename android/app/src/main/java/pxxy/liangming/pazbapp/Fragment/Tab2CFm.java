@@ -1,12 +1,15 @@
 package pxxy.liangming.pazbapp.Fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import pxxy.liangming.pazbapp.Activity.LoginActivity;
 import pxxy.liangming.pazbapp.R;
 import pxxy.liangming.pazbapp.Titlebar.TitleBar;
 
@@ -18,7 +21,8 @@ import pxxy.liangming.pazbapp.Titlebar.TitleBar;
  */
 
 public class Tab2CFm extends Fragment {
-    TitleBar titleBarC;
+    TitleBar titleBar2C;
+    Button exit2Btn;
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -41,13 +45,22 @@ public class Tab2CFm extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         System.out.println("CCCCCCCCCC____onActivityCreated");
+        exit2Btn=getView().findViewById(R.id.exit2Btn);
+        exit2Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent exit=new Intent(getContext(), LoginActivity.class);
+                startActivity(exit);
+                getActivity().finish();
+            }
+        });
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        titleBarC=(TitleBar) getView().findViewById(R.id.title2_barC);
-        titleBarC.setTitle("我的账户");
+        titleBar2C=(TitleBar) getView().findViewById(R.id.title2_barC);
+        titleBar2C.setTitle("我的账户");
         System.out.println("CCCCCCCCCC____onStart");
     }
 

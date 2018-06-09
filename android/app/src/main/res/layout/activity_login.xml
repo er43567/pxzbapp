@@ -87,7 +87,7 @@
             android:background="#ffc0c3c4" />
         <Spinner
             android:id="@+id/spinner"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 android:background="#FFF"
@@ -110,6 +110,19 @@ android:background="#FFF"
         android:text="登  录"
         android:textColor="#ffffff"
         android:textSize="18dp" />
+    <Button
+        android:id="@+id/r2btn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="5dp"
+        android:background="#3aadfd"
+        android:text="二级Activity"
+        android:textColor="#ffffff"
+        android:textSize="14dp" />
 
     <TextView
         android:id="@+id/promptText"

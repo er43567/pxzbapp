@@ -23,7 +23,7 @@ import pxxy.liangming.pazbapp.net.NetManager;
 
 public class FhzbActivity extends AppCompatActivity {
 
-    int radioGroups[] = new int[]{
+    private int radioGroups[] = new int[]{
             R.id.rg_1,
             R.id.rg_2,
             R.id.rg_3,
@@ -31,7 +31,7 @@ public class FhzbActivity extends AppCompatActivity {
             R.id.rg_5,
             R.id.rg_6
     };
-    int selections[] = new int[radioGroups.length];
+    private int selections[] = new int[radioGroups.length];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,7 @@ public class FhzbActivity extends AppCompatActivity {
         }
     }
 
-    void submit() {
+    private void submit() {
         Dialog.showDialog(this, Arrays.toString(selections));
         NetAdapterLrx.submitFhzb(selections[0],selections[1],selections[2]
                 ,selections[3],selections[4],selections[5], new NetManager.INetCallback(){
