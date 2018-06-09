@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <pxxy.liangming.pazbapp.Titlebar.TitleBar
-        android:id="@+id/title_barC"
+        android:id="@+id/title2_barB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorTB"
@@ -18,98 +18,87 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="40dp"
 
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="7dp"
         android:background="#fff"
         android:gravity="center"
         android:orientation="vertical">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/jinghui_2"
-            app:civ_border_color="#FFFFFF"
-            app:civ_border_width="2dp" />
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="5dp"
-            android:text="UserName"
+            android:padding="10dp"
+            android:text="绿色:已查  /  橙色:未查  /  红色:异常"
             android:textSize="16sp" />
     </LinearLayout>
 
+
+
     <com.leon.lib.settingview.LSettingItem
-        android:id="@+id/msg"
+        android:id="@+id/djzb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        leon:leftText="我的消息"
-        android:background="#FFE4E4E4"
+        leon:leftText="单警装备"
+        />
+    <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/fhzb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        leon:leftText="防护装备"
         />
 
     <com.leon.lib.settingview.LSettingItem
-        android:id="@+id/xgmm"
+        android:id="@+id/jyzb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-  
-        leon:leftText="修改密码" />
+        leon:leftText="救援装备"
+        />
 
     <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/dljt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-android:layout_marginTop="20dp"
-        leon:leftText="用户ID"
-        leon:rightText="00001"
-        leon:rightStyle="iconHide"
-/>
-
-
+        leon:leftText="道路交通"
+        />
     <com.leon.lib.settingview.LSettingItem
-        android:id="@+id/name"
+        android:id="@+id/wqjx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        leon:leftText="姓名"
-        leon:rightStyle="iconHide"
-        leon:rightText="杨传君"
-
-/>
-
+        leon:leftText="武器警械"
+        />
     <com.leon.lib.settingview.LSettingItem
-        android:id="@+id/belongs"
+        android:id="@+id/jsdj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        leon:rightText="特巡警支队"
-        leon:leftText="所属分局"
-        leon:rightStyle="iconHide"
-  />
-
-
-
+        leon:leftText="警示灯具"
+        />
     <com.leon.lib.settingview.LSettingItem
-        android:id="@+id/phone"
+        android:id="@+id/fzzb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        leon:rightText="18779913896"
-        leon:leftText="手机号"
-        leon:rightStyle="iconHide"
-
-/>
-
+        leon:leftText="辅助装备"
+        />
+    <com.leon.lib.settingview.LSettingItem
+        android:id="@+id/car"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        leon:leftText="车辆管理（开发）"
+        />
     <Button
-        android:id="@+id/exitBtn"
+        android:id="@+id/refresh2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/xgmm"
+
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="28dp"
         android:layout_marginRight="28dp"
         android:layout_marginTop="10dp"
-        android:background="#b60000"
-        android:text="退出登录"
+        android:background="#3a9fff"
+        android:text="刷 新"
         android:textColor="#ffffff"
         android:textSize="18dp" />
 

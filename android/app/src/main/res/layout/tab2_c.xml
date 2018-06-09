@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <pxxy.liangming.pazbapp.Titlebar.TitleBar
-        android:id="@+id/title_barC"
+        android:id="@+id/title2_barC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorTB"
@@ -54,17 +54,17 @@
         android:id="@+id/xgmm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-  
+
         leon:leftText="修改密码" />
 
     <com.leon.lib.settingview.LSettingItem
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-android:layout_marginTop="20dp"
+        android:layout_marginTop="20dp"
         leon:leftText="用户ID"
         leon:rightText="00001"
         leon:rightStyle="iconHide"
-/>
+        />
 
 
     <com.leon.lib.settingview.LSettingItem
@@ -76,7 +76,7 @@ android:layout_marginTop="20dp"
         leon:rightStyle="iconHide"
         leon:rightText="杨传君"
 
-/>
+        />
 
     <com.leon.lib.settingview.LSettingItem
         android:id="@+id/belongs"
@@ -85,7 +85,7 @@ android:layout_marginTop="20dp"
         leon:rightText="特巡警支队"
         leon:leftText="所属分局"
         leon:rightStyle="iconHide"
-  />
+        />
 
 
 
@@ -97,10 +97,10 @@ android:layout_marginTop="20dp"
         leon:leftText="手机号"
         leon:rightStyle="iconHide"
 
-/>
+        />
 
     <Button
-        android:id="@+id/exitBtn"
+        android:id="@+id/exit2Btn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/xgmm"

@@ -45,6 +45,19 @@ public class LoginActivity extends Activity {
     private String role=null;
     private String userId=null;
     private String pswd=null;
+    private String select=null;
+    private int autoLogin=0;
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO 获取注销时是否传进“清除自动登陆”选项
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1){
+        Toast.makeText(getApplicationContext(),"注销成功",Toast.LENGTH_SHORT)
+        .show();
+        //Todo 清除sp
+            autoLogin=0;
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,20 +66,49 @@ public class LoginActivity extends Activity {
         Button login =findViewById(R.id.loginBtn);
         EditText editText = findViewById(R.id.et_userId);
         EditText pswText = findViewById(R.id.et_pass);
+        Button r2Btn=findViewById(R.id.r2btn);
+        //新建一个SP，检查是否有用户名密码存在，在则自动登陆
 
-//新建一个SP，检查是否有用户名密码存在，在则自动登陆
+        if(autoLogin==1) {
+
             SharedPreferences shareGet = super.getSharedPreferences(fileName,
                     MODE_PRIVATE);
             editText.setText(shareGet.getString("user", "null"));
             pswText.setText(shareGet.getString("pswd", ""));
 
             Toast.makeText(getApplicationContext()
-                    ,"user:"+shareGet.getString("user", "")+"/"+shareGet.getString("pswd", "")
-                    ,Toast.LENGTH_SHORT).show();
+                    , "user:" + shareGet.getString("user", "") + "/" + shareGet.getString("pswd", "")
+                    , Toast.LENGTH_SHORT).show();
+        }
 
+        mSpinner = (Spinner) findViewById(R.id.spinner);
+        //监听Spinner的操作
+        mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            //选取时候的操作
 
+            @Override
+            public void onItemSelected( AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                role = getResources().getStringArray(R.array.role)[arg2];
+                Toast.makeText(getApplication(),"role:"+role,Toast.LENGTH_SHORT).show();
+            }
+            //没被选取时的操作
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Toast.makeText(getApplication(),"未选择权限",Toast.LENGTH_SHORT).show();
 
+            }
+        });
 
+        r2Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent main2=new Intent(LoginActivity.this,Main2Activity.class);
+                Toast.makeText(getApplication(),"二级页面",Toast.LENGTH_SHORT).show();
+                startActivity(main2);
+                finish();
+            }
+        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,45 +119,21 @@ public class LoginActivity extends Activity {
                 pswd = pswText.getText().toString();
 
 
-                mSpinner = (Spinner) findViewById(R.id.spinner);
 
-                String []sss=new String[]{"请选择账户","一级民警","二级"};
-
-                //设置ArrayAdapter内置的item样式-这里是单行显示样式
-                final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,sss);
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-                //设置Adapter了
-                mSpinner.setAdapter(adapter);
-                //监听Spinner的操作
-                mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    //选取时候的操作
-
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        Toast.makeText(getApplication(),"itemSelected",Toast.LENGTH_SHORT).show();
-                        role= (String) mSpinner.getSelectedItem();
-                    }
-                    //没被选取时的操作
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-                        Toast.makeText(getApplication(),"noThingSelected",Toast.LENGTH_SHORT).show();
-
-                    }
-                });
                 SharedPreferences share = getSharedPreferences(fileName, MODE_PRIVATE);
                 SharedPreferences.Editor editor = share.edit();
                 editor.putString("user", userId);
                 editor.putString("pswd", pswd);
                 editor.putString("role", role);
                 editor.commit();
-
-                Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
+                autoLogin=1;
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
 
 
 
-                NetAdapterLrx.login(userId , psw, new NetManager.INetCallback() {
+                NetAdapterLrx.login(userId , pswd, new NetManager.INetCallback() {
                     @Override
                     public void onCallback(String result, JSONObject jsonObject) {
 

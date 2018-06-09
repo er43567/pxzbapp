@@ -10,6 +10,7 @@ public class NetAdapterLrx extends NetAdapter {
     public static String loadDemoDataUrl = Conf.URL + "/loadUserList";
     public static String loginUrl = Conf.URL + "/login";
     public static String submitFhzbUrl = Conf.URL + "/submitFhzb";
+    public static String getFhzbUrl=Conf.URL+"/getFhzb";
 
     public static void loadDemoData(String userId, NetManager.INetCallback callback) {
         NetManager.visit(loadDemoDataUrl
@@ -31,4 +32,11 @@ public class NetAdapterLrx extends NetAdapter {
                 ,new String[]{sel0+"",sel1+"",sel2+"",sel3+"",sel4+"",sel5+""}
                 , callback);
     }
+/*
+    private static getFhzb(String result, NetManager.INetCallback callback){
+
+//TODO
+        return result;
+
+    }*/
 }

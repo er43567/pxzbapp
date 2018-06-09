@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="pxxy.liangming.pazbapp.Activity.RankTwo.Main2Activity">
     <pxxy.liangming.pazbapp.Titlebar.TitleBar
-        android:id="@+id/tb_main"
+        android:id="@+id/tb2_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorTB"
@@ -19,7 +19,7 @@
         >
 
         <FrameLayout
-            android:id="@+id/tab_content"
+            android:id="@+id/tab2_content"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="1.0"
@@ -27,7 +27,7 @@
             />
 
         <RadioGroup
-            android:id="@+id/tabs_rg"
+            android:id="@+id/tabs2_rg"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:drawableTop="@drawable/tabsearch"
                 android:button="@null"
-                android:text="装备管理"
+                android:text="装备检查"
                 android:textColor="#000000"
                 android:textSize="13sp"
                 android:layout_weight="1.0"
