@@ -8,6 +8,8 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cn.zbgl.bean.User;
+import cn.zbgl.bean.Zhuangbei;
+import cn.zbgl.lm.service.LmService;
 import cn.zbgl.lrx.service.LrxService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -15,7 +17,7 @@ import cn.zbgl.lrx.service.LrxService;
 public class JunitTest extends AbstractJUnit4SpringContextTests {
 	
 	@Autowired
-	private LrxService service;
+	LmService service;
 	
 	@Test
 	public void test1() {
@@ -24,7 +26,7 @@ public class JunitTest extends AbstractJUnit4SpringContextTests {
 	
 	@Test
 	public void test2() {
-		service.testService();
+		service.saveReports("admin", Zhuangbei.Type_Fhzb, "xx装备", "121212121221");
 	}
 	
 }

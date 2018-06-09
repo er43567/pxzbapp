@@ -2,10 +2,9 @@ package cn.zbgl.system.vo;
 
 import java.util.List;
 
-import cn.zbgl.bean.Department;
 import cn.zbgl.bean.User;
 
-public class DepartmentAndUserList {
+public class DepartmentAndUserList {/*
 
 	private Department department;
 	private List<User> list;
@@ -33,4 +32,4 @@ public class DepartmentAndUserList {
 		this.list = list;
 	}
 
-}
+*/}

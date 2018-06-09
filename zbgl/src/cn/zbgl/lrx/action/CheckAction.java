@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import cn.zbgl.bean.Fhzb;
 import cn.zbgl.common.CommonAction;
 import cn.zbgl.lrx.service.LrxService;
 
@@ -20,20 +19,27 @@ public class CheckAction extends CommonAction {
 	@Autowired
 	protected LrxService lrxService;
 	
-	Fhzb fhzb = new Fhzb();
-	public Fhzb getFhzb() {
-		return fhzb;
-	}
 	
 	@Action(value="/submitFhzb"
 			,results={@Result(type="json")}
 			,params={"contentType", "text/html"})
 	public String submitFhzb() {
-		System.out.println(fhzb);
-		lrxService.saveFhzb("", fhzb);
+		/*System.out.println(fhzb);
+		lrxService.saveFhzb("", fhzb);*/
 		return aa;
 	}
 	
+	@Action(value="/loadFhzb"
+			,results={@Result(type="json")}
+			,params={"contentType", "text/html"})
+	public String loadFhzb() {
+		/**
+		 * 通过表单id来拿到数据
+		 */
+		//fhzb = lrxService.loadFhzb(fhzb.getCheckId());
+		
+		return aa;
+	}
 	
 	@Override
 	public String getResult() {

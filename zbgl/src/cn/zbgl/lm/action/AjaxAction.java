@@ -77,7 +77,6 @@ public class AjaxAction extends CommonAction {
 			,params={"contentType", "text/html"})
 	public String loadUserList() {
 		System.out.println("Action层被调用, stu = " + user);
-		lrxService.testService();//调用Service层
 		
 		userLi = new ArrayList<User>();
 		for(int i=0;i<10;i++) {

@@ -6,39 +6,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 角色表
+ */
+
 @Entity
 @Table(name="role_tb")
-public class Role implements java.io.Serializable  {
+public class Role {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int roleId;
-	private int roleName;
-	private int zbRank;
-	private int carRank;
-	
-	public int getRoleId() {
-		return roleId;
+	int sid;
+	String type;
+	public int getSid() {
+		return sid;
 	}
-	public int getRoleName() {
-		return roleName;
+	public void setSid(int sid) {
+		this.sid = sid;
 	}
-	public int getZbRank() {
-		return zbRank;
+	public String getType() {
+		return type;
 	}
-	public int getCarRank() {
-		return carRank;
+	public void setType(String type) {
+		this.type = type;
 	}
-	public void setRoleId(int roleId) {
-		this.roleId = roleId;
-	}
-	public void setRoleName(int roleName) {
-		this.roleName = roleName;
-	}
-	public void setZbRank(int zbRank) {
-		this.zbRank = zbRank;
-	}
-	public void setCarRank(int carRank) {
-		this.carRank = carRank;
-	}
-	
 }
