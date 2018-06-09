@@ -2,15 +2,15 @@ package cn.zbgl.lrx.service.impl;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import cn.zbgl.adapters.DaoAdapter;
-import cn.zbgl.adapters.IDaoAdapter;
 import cn.zbgl.bean.Fhzb;
 import cn.zbgl.bean.User;
-import cn.zbgl.lrx.dao.LrxDao;
 import cn.zbgl.lrx.dao.impl.LrxDaoImpl;
 import cn.zbgl.lrx.service.LrxService;
 

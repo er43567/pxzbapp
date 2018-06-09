@@ -1,9 +1,10 @@
 package cn.zbgl.lm.service.impl;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
-import cn.zbgl.adapters.IDaoAdapter;
-import cn.zbgl.lm.dao.LmDao;
+import cn.zbgl.adapters.DaoAdapter;
 import cn.zbgl.lm.dao.impl.LmDaoImpl;
 import cn.zbgl.lm.service.LmService;
 
