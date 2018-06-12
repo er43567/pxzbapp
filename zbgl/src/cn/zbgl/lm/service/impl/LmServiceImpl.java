@@ -1,5 +1,7 @@
 package cn.zbgl.lm.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +45,23 @@ public class LmServiceImpl implements LmService {
 			}
 		}
 	}
+
+	@Override
+	public String loadReports(String zhuangbeiType) {
+		
+		try {
+			List<Report> li = dao.findByHql("from Report where zhuangbeiType=?"
+					, new Object[]{zhuangbeiType});
+			String s = "";
+			for(int i=0;i<li.size();i++) {
+				s += li.get(i).getData();
+			}
+			return s;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+ 
 	
 }

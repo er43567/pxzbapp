@@ -62,4 +62,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+/*    public static void start(Context context, Object obj) {
+        //Todo 牛逼
+        context.startActivity();
+
+
+    }*/
 }

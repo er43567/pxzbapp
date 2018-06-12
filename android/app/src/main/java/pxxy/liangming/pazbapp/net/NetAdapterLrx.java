@@ -10,12 +10,12 @@ public class NetAdapterLrx extends NetAdapter {
     public static String loadDemoDataUrl = Conf.URL + "/loadUserList";
     public static String loginUrl = Conf.URL + "/login";
     public static String submitReportDataUrl = Conf.URL + "/submitReport";
-    public static String loadReportDataUrl=Conf.URL+"/loadReport";
+    public static String loadReportDataUrl = Conf.URL + "/loadReport";
 
     public static void loadDemoData(String userId, NetManager.INetCallback callback) {
         NetManager.visit(loadDemoDataUrl
                 , new String[]{"user.userId"}
-        , new String[]{userId}, callback);
+                , new String[]{userId}, callback);
     }
 
     public static void login(String userId, String psw, NetManager.INetCallback callback) {
@@ -24,21 +24,22 @@ public class NetAdapterLrx extends NetAdapter {
                 , new String[]{userId, psw}, callback);
     }
 
-    public static void submitFhzb(int sel0, int sel1, int sel2
-            , int sel3, int sel4, int sel5, NetManager.INetCallback callback) {
+    public static void submitFhzb(String zhuangbeiName,String zhuangbeiType,Object datas, NetManager.INetCallback callback) {
 
         /**
          * 这里也是改成三个参数
-         * ok 有返回值的应该也不能用get开头吧 再Action里面的接口方法不能用GetSet
+         * Action里面的接口方法不能用GetSet
          */
-        NetManager.visit(submitFhzbUrl, new String[]{"report.zhuangbeiType"}
-                ,new String[]{"XX类型",""}
-                , callback);//goto bed
+        NetManager.visit(submitReportDataUrl, new String[]{"report.zhuangbeiName","report.zhuangbeiType","report.datas"}
+                , new String[]{"XX类型", "","123"}
+                , callback);
     }
-/*    private static getFhzb(String result, NetManager.INetCallback callback){
+    public static void loadFhzb(NetManager.INetCallback callback){
+        NetManager.visit(loadReportDataUrl,
+                new String[]{},new String[]{},callback);
+    }
 
-//TODO
-        return result;
 
-    }*/
+
 }
+

@@ -68,6 +68,12 @@ public class Report {
 		this.data = data;
 	}
 
+	@Override
+	public String toString() {
+		return "Report [sid=" + sid + ", userId=" + userId + ", zhuangbeiType=" + zhuangbeiType + ", zhuangbeiName="
+				+ zhuangbeiName + ", data=" + data + ", time=" + time + "]";
+	}
+
 	public String getTime() {
 		return time;
 	}
