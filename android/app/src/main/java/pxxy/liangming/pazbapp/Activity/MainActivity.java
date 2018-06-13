@@ -1,6 +1,7 @@
 package pxxy.liangming.pazbapp.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Matrix;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -22,6 +23,7 @@ import pxxy.liangming.pazbapp.Fragment.TabCFm;
 import pxxy.liangming.pazbapp.R;
 import pxxy.liangming.pazbapp.Titlebar.TitleBar;
 import pxxy.liangming.pazbapp.Util.Dialog;
+import pxxy.liangming.pazbapp.Webview.WebViewActivity;
 import pxxy.liangming.pazbapp.net.NetAdapterLrx;
 import pxxy.liangming.pazbapp.net.NetManager;
 
@@ -36,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     public String hello = "hello ";
     private long firstPressedTime;
     ActivityManager manager;
-
 
     // System.currentTimeMillis() 当前系统的时间
     @Override
@@ -59,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         rgs = (RadioGroup) findViewById(R.id.tabs_rg_main);
 
         FragmentTabAdapter tabAdapter = new FragmentTabAdapter(this, fragments, R.id.tab_content, rgs);
-
 
     }
 }

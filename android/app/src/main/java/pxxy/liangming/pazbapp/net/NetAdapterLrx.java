@@ -31,9 +31,9 @@ public class NetAdapterLrx extends NetAdapter {
          * 这里也是改成三个参数
          * ok 有返回值的应该也不能用get开头吧 再Action里面的接口方法不能用GetSet
          */
-        NetManager.visit(submitFhzbUrl, new String[]{"report.zhuangbeiType"}
+        /*NetManager.visit(submitFhzbUrl, new String[]{"report.zhuangbeiType"}
                 ,new String[]{"XX类型",""}
-                , callback);//goto bed
+                , callback);//goto bed*/
     }
 /*    private static getFhzb(String result, NetManager.INetCallback callback){
 
