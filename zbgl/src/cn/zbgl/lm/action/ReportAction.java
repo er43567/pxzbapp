@@ -60,8 +60,7 @@ public class ReportAction extends CommonAction {
 	
 	public String loadReportDatas() {
 		
-		datas = service.load...
-		//知道怎么写么嗯，么么 = =卧槽 睡觉
+/*		datas = service.load...*/
 		return aa;
 		
 	}

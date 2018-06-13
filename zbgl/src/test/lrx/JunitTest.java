@@ -26,7 +26,10 @@ public class JunitTest extends AbstractJUnit4SpringContextTests {
 	
 	@Test
 	public void test2() {
-		service.saveReports("admin", Zhuangbei.Type_Fhzb, "xx装备", "121212121221");
+		//好烦阿。为什么要这样对我= =！真应该New一个GirlFriend.java的实体类，
+		//程序员不需要女票的 for(;;)new GirlFriend();
+		//
+		service.saveReports("admin", Zhuangbei.Type_Fhzb, "xx装备", "1212121212");
 	}
 	
 }
