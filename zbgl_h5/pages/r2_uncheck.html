@@ -59,9 +59,6 @@
 						【一级民警】李四
 						<p>提交于 今天 15:30</p>
 					</div>
-					<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
-					<h2>小M</h2>
-					<p>发表于 2016-06-30 15:30</p>-->
 				</div>
 				<div class="mui-card-content">
 					<div class="mui-card-content-inner">
@@ -70,20 +67,17 @@
 					</div>
 				</div>
 				<div class="mui-card-footer">
-					<a class="mui-card-link" href="index.html">查看表单</a>
-					<a class="mui-card-link">确定</a>
+					<a class="mui-card-link" href="zhuangbei/Fhzb.html">查看表单</a>
+					<a id="check" class="mui-card-link" onclick="check()">确定</a>
 
 				</div>
 			</div>
-			<div class="mui-card">
+			<!--			<div class="mui-card">
 				<div class="mui-card-header">
 					<div class="mui-media-body">
 						【一级民警】张三
 						<p>提交于 昨天 15:30</p>
 					</div>
-					<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
-					<h2>小M</h2>
-					<p>发表于 2016-06-30 15:30</p>-->
 				</div>
 				<div class="mui-card-content">
 					<div class="mui-card-content-inner">
@@ -103,9 +97,6 @@
 						【一级民警】张三
 						<p>提交于 2018-06-10 15:30</p>
 					</div>
-					<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
-					<h2>小M</h2>
-					<p>发表于 2016-06-30 15:30</p>-->
 				</div>
 				<div class="mui-card-content">
 					<div class="mui-card-content-inner">
@@ -125,9 +116,6 @@
 						【一级民警】张三
 						<p>提交于 2018-06-09 11:30</p>
 					</div>
-					<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
-					<h2>小M</h2>
-					<p>发表于 2016-06-30 15:30</p>-->
 				</div>
 				<div class="mui-card-content">
 					<div class="mui-card-content-inner">
@@ -140,9 +128,12 @@
 					<a class="mui-card-link">确定</a>
 
 				</div>
-			</div>
+			</div>-->
 		</div>
 		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.init();
+		</script>
 		<script>
 			var refreshResult = 0;
 			mui.init({
@@ -155,6 +146,13 @@
 					mui.toast('刷新成功，新增：' + refreshResult);
 				}.bind(this), 2000);
 			});
+		</script>
+		<script>
+			function check() {
+				var div = document.getElementById("check").parentNode.parentNode;
+				div.parentNode.removeChild(document.getElementById("check").parentNode.parentNode);
+				mui.toast('完成');
+			}
 		</script>
 	</body>
 

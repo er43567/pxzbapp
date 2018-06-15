@@ -22,6 +22,7 @@
 
 			<div class="mui-card" style="margin-bottom: 35px;">
 				<ul class="mui-table-view">
+					<li id="time" class="mui-table-view-divider"></li>
 
 					<li class="mui-table-view-cell">
 						<a class="mui-navigate-right">
@@ -71,9 +72,10 @@
 				var day = dateObj.getDay();
 				var newDate = year + "年" + month + "月" + date + "日";
 				/*document.getElementById("title").innerHTML = zbName + "&nbsp;&nbsp;&nbsp;" + newDate;//暂时去除时间显示*/
-				document.getElementById("title").innerHTML = zbName;
+				document.getElementById("time").innerHTML = newDate + "———" + zbName;
 			}
 		</script>
+		
 	</body>
 
 </html>
