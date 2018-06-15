@@ -1,13 +1,23 @@
 package cn.zbgl.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Formula;
 
 /**
- * 流程表
+ * 成绩
+ * @author asus
  */
-
+@Entity
+@Table(name="process_tb")
 public class Process {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int sid;
-	
 	int reportRef;//哪个检查（表）的流程
 	
 	int a;//第一个界面的是或者否    一级用户

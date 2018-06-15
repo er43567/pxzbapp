@@ -36,6 +36,13 @@
         <activity android:name=".Activity.zb.ZbInfoActivity" />
         <activity android:name=".Activity.car.CarActivity" />
         <activity android:name=".Activity.MsgActivity"></activity>
+
+        <activity android:name=".Webview.WebViewActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true">
+        </activity>
+
     </application>
 
 </manifest>

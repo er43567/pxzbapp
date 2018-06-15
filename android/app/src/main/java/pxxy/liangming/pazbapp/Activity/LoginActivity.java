@@ -1,6 +1,7 @@
 package pxxy.liangming.pazbapp.Activity;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -33,6 +34,7 @@ import pxxy.liangming.pazbapp.SplashActivity;
 import pxxy.liangming.pazbapp.Titlebar.TitleBar;
 import pxxy.liangming.pazbapp.Util.Dialog;
 import pxxy.liangming.pazbapp.Util.SpUtil;
+import pxxy.liangming.pazbapp.Webview.WebViewActivity;
 import pxxy.liangming.pazbapp.net.NetAdapterLrx;
 import pxxy.liangming.pazbapp.net.NetManager;
 
@@ -67,6 +69,14 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Dialog.showOKCancelDialog(this, "是否进入Webview Demo", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                WebViewActivity.start(LoginActivity.this ,"http://baidu.com/", null);
+            }
+        });
+
         //加载完界面以后，获取控件
         Button login =findViewById(R.id.loginBtn);
         EditText editText = findViewById(R.id.et_userId);

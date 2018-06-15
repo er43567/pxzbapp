@@ -36,6 +36,7 @@ public class JunitTest extends AbstractJUnit4SpringContextTests {
 	public void test2() {
 		//service.saveReports("admin", Zhuangbei.Type_Fhzb, "xx装备", "1");
 
+
 	}
 	@Test
 	public void test3() {

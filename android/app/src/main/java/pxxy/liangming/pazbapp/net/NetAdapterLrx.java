@@ -33,6 +33,7 @@ public class NetAdapterLrx extends NetAdapter {
         NetManager.visit(submitReportDataUrl, new String[]{"report.zhuangbeiName","report.zhuangbeiType","report.datas"}
                 , new String[]{"XX类型", "","123"}
                 , callback);
+
     }
     public static void loadFhzb(NetManager.INetCallback callback){
         NetManager.visit(loadReportDataUrl,

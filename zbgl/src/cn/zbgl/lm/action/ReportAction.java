@@ -62,11 +62,13 @@ public class ReportAction extends CommonAction {
 	@Action(value="/loadReport"
 			,results={@Result(type="json")}
 			,params={"contentType", "text/html"})
-	public String loadReportDatas() {
+	public String loadReportDatas(String zhuangbeiType) {
 		
-		service.loadReports();
+
+		service.loadReports(zhuangbeiType);
 /*		datas = service.loadReports(length)*/
 		//
+
 		return aa;
 		
 	}
