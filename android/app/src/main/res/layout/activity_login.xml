@@ -95,6 +95,15 @@ android:background="#FFF"
             android:drawableRight="@mipmap/sanjiaoxing"/>
     </LinearLayout>
 
+    <CheckBox
+        android:id="@+id/autoLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input"
+        android:layout_centerHorizontal="true"
+        android:text="自动登陆"
+        android:textColor="#FFF"
+        />
 
 
     <Button

@@ -24,8 +24,8 @@
 							<span class="mui-badge mui-badge-green">5</span> 已审核的检查
 						</a>
 					</li>
-										<li class="mui-table-view-cell">
-						<a class="mui-navigate-right"  onclick="check()">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" onclick="check()">
 							<span class="mui-badge mui-badge-green">0</span> 高端装备申请审核
 						</a>
 					</li>
@@ -34,11 +34,51 @@
 							<span class="mui-badge mui-badge-danger">0</span>异常项
 						</a>
 					</li>
+					<li class="mui-table-view-divider">今日装备状态</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">已查</span>单警装备
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="zhuangbei/Fhzb.html">
+							<span class="mui-badge mui-badge-green">已查</span>防护装备
+						</a>
+					</li>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">已查</span>救援装备
+						</a>
+					</li>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">已查</span>道路交通
+						</a>
+					</li>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">已查</span>武器警械
+						</a>
+					</li>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">已查</span>警示灯具
+						</a>
+					</li>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">已查</span>辅助装备
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>
 		<script>
-
 			function getDate() {
 				var dateObj = new Date();
 
@@ -47,18 +87,20 @@
 				var date = dateObj.getDate(); //日
 				var day = dateObj.getDay();
 				var newDate = year + "年" + month + "月" + date + "日";
-				document.getElementById("time").innerHTML ="今天是"+ newDate;
+				document.getElementById("time").innerHTML = "今天是" + newDate;
 			}
-			
 		</script>
 		<script>
-						var checked=1;
-			var uncheck=1;
-			var warning=0;
-			function check(){
-					if(warning==0){
-				mui.toast('无数据');}
-			}</script>
+			var checked = 1;
+			var uncheck = 1;
+			var warning = 0;
+
+			function check() {
+				if(warning == 0) {
+					mui.toast('无数据');
+				}
+			}
+		</script>
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init()

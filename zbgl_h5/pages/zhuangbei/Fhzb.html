@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body onload="getDate('防护装备')">
+		<header class="mui-bar mui-bar-nav">
+			<button type="button" class="mui-btn mui-btn-link" onclick="window.history.go(-1)">
+		            <span class="mui-icon mui-icon-back"></span>
+		            返回
+		        </button>
+			<h1 id="title" class="mui-title"></h1>
+
+		</header>
+
+		<div class="mui-content">
+
+			<div class="mui-card" style="margin-bottom: 35px;">
+				<ul class="mui-table-view">
+
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">正常</span>勤务头盔
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">正常</span>防弹防刺背心
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">正常</span>臂盾
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">正常</span>防弹头盔
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">正常</span>防暴盾牌
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-badge mui-badge-green">正常</span>丁字棍
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script>
+			function getDate(zbName) {
+				var dateObj = new Date();
+
+				var year = dateObj.getFullYear(); //年
+				var month = dateObj.getMonth() + 1; //月  (注意：月份+1)
+				var date = dateObj.getDate(); //日
+				var day = dateObj.getDay();
+				var newDate = year + "年" + month + "月" + date + "日";
+				/*document.getElementById("title").innerHTML = zbName + "&nbsp;&nbsp;&nbsp;" + newDate;//暂时去除时间显示*/
+				document.getElementById("title").innerHTML = zbName;
+			}
+		</script>
+	</body>
+
+</html>

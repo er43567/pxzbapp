@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -47,6 +49,7 @@ public class LoginActivity extends Activity {
     private String pswd=null;
     private String select=null;
     private int autoLogin=0;
+    private CheckBox autoLoginCB=null;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO 获取注销时是否传进“清除自动登陆”选项
@@ -69,18 +72,18 @@ public class LoginActivity extends Activity {
         EditText editText = findViewById(R.id.et_userId);
         EditText pswText = findViewById(R.id.et_pass);
         Button r2Btn=findViewById(R.id.r2btn);
+        autoLoginCB=findViewById(R.id.autoLogin);
         //新建一个SP，检查是否有用户名密码存在，在则自动登陆
 
 
 
             SharedPreferences shareGet = super.getSharedPreferences(fileName,
                     MODE_PRIVATE);
+            autoLogin=shareGet.getInt("autoLogin",0);
+
             editText.setText(shareGet.getString("user", ""));
             pswText.setText(shareGet.getString("pswd", ""));
-        editText.getText()
-            Toast.makeText(getApplicationContext()
-                    , "user:" + shareGet.getString("user", "") + "/" + shareGet.getString("pswd", "")
-                    , Toast.LENGTH_SHORT).show();
+
 
 
         mSpinner = (Spinner) findViewById(R.id.spinner);
@@ -91,16 +94,18 @@ public class LoginActivity extends Activity {
             @Override
             public void onItemSelected( AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 role = getResources().getStringArray(R.array.role)[arg2];
-                Toast.makeText(getApplication(),"role:"+role,Toast.LENGTH_SHORT).show();
+
             }
             //没被选取时的操作
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(getApplication(),"未选择权限",Toast.LENGTH_SHORT).show();
+
 
             }
         });
 
+
+        //测试用的二级activity跳转按钮
         r2Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,6 +125,13 @@ public class LoginActivity extends Activity {
                 userId = editText.getText().toString();
                 pswd = pswText.getText().toString();
 
+                Toast.makeText(getApplicationContext()
+                        ,"自动登陆:"+autoLogin
+                        , Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(getApplication(),"role:"+role,Toast.LENGTH_SHORT).show();
+//根据checkbox判断是否自动登陆
+
 
 
                 SharedPreferences share = getSharedPreferences(fileName, MODE_PRIVATE);
@@ -127,6 +139,7 @@ public class LoginActivity extends Activity {
                 editor.putString("user", userId);
                 editor.putString("pswd", pswd);
                 editor.putString("role", role);
+                editor.putInt("autoLogin",autoLogin);
                 editor.commit();
 
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
