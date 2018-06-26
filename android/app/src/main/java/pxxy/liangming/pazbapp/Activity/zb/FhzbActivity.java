@@ -14,6 +14,7 @@ import org.json.JSONObject;
 import java.util.Arrays;
 
 import pxxy.liangming.pazbapp.R;
+import pxxy.liangming.pazbapp.Titlebar.TitleBar;
 import pxxy.liangming.pazbapp.Util.Dialog;
 import pxxy.liangming.pazbapp.Util.SpUtil;
 import pxxy.liangming.pazbapp.net.NetAdapterLrx;
@@ -37,6 +38,7 @@ public class FhzbActivity extends AppCompatActivity {
             R.id.rg_6
     };
     private int selections[] = new int[radioGroups.length];
+    private TitleBar tb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,8 @@ public class FhzbActivity extends AppCompatActivity {
      * 所有的组建初始化
      */
     private void initWidgets() {
+        tb=findViewById(R.id.title_bar);
+        tb.setTitle("防护装备");
         //初始化所有RadioGroup的监听器
         for (int i=0;i<radioGroups.length;i++) {
             final int k = i;
@@ -64,6 +68,7 @@ public class FhzbActivity extends AppCompatActivity {
                 }
             });
         }
+
 
     }
 
@@ -79,10 +84,15 @@ public class FhzbActivity extends AppCompatActivity {
     }
 
     private void submit() {
-        Dialog.showDialog(this, Arrays.toString(selections));
+/*        Dialog.showDialog(this, Arrays.toString(selections));
         for (int i=0;i<radioGroups.length;i++){
             datas+=selections[i];
-        }
+        }*/
+        //测试用
+        Toast.makeText(FhzbActivity.this, "提交成功", Toast.LENGTH_SHORT).show();
+        FhzbActivity.super.finish();
+        //测试用
+
         Toast.makeText(getApplication(),datas,Toast.LENGTH_SHORT).show();
         NetAdapterLrx.submitFhzb("警棍","Djzb",datas, new NetManager.INetCallback(){
                     @Override

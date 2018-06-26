@@ -148,6 +148,7 @@ public class TabBFm extends Fragment{
 
         titleBarB=(TitleBar) getView().findViewById(R.id.title_barB);
         titleBarB.setTitle("装备管理"+"\n["+form+"]");
+        titleBarB.setTitleColor(Color.WHITE);
         initView();
 
   /*      this.getView().findViewById(R.id.refresh).setOnClickListener(new View.OnClickListener() {

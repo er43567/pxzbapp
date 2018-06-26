@@ -1,12 +1,14 @@
 package pxxy.liangming.pazbapp.Fragment;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -35,7 +37,7 @@ import pxxy.liangming.pazbapp.Titlebar.TitleBar;
 
 public class Tab2BFm extends Fragment {
     private TitleBar titleBarB;
-    private Button refresh;
+    private String domain="127.0.0.1";
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -66,67 +68,16 @@ public class Tab2BFm extends Fragment {
         String form=sd.format(date);
 
         titleBarB=(TitleBar) getView().findViewById(R.id.title2_barB);
-        titleBarB.setTitle("装备情况检查"+"\n["+form+"]");
+        titleBarB.setTitle("装备检查"+"\n["+form+"]");
+        titleBarB.setTitleColor(Color.WHITE);
+        WebView webView = getView().findViewById(R.id.webView);
+//        indexFragment = new IndexFragment();
+        //加载的路径
+        webView.loadUrl("http://"+domain+":8020/zbgl_h5/pages/r2_main.html");
 
- /*       LSettingItem djzb = (LSettingItem) getView().findViewById(R.id.djzb);
-        LSettingItem fhzb = (LSettingItem) getView().findViewById(R.id.fhzb);
-        LSettingItem jyzb = (LSettingItem) getView().findViewById(R.id.jyzb);
-        LSettingItem dljt = (LSettingItem) getView().findViewById(R.id.dljt);
-        LSettingItem wqjx = (LSettingItem) getView().findViewById(R.id.wqjx);
-        LSettingItem jsdj = (LSettingItem) getView().findViewById(R.id.jsdj);
-        LSettingItem fzzb = (LSettingItem) getView().findViewById(R.id.fzzb);
-        LSettingItem car = (LSettingItem) getView().findViewById(R.id.car);
 
-        final Intent toDjzb =new Intent(getContext(),DjzbActivity.class);
-        final Intent toFhzb =new Intent(getContext(),FhzbActivity.class);
-        final Intent toJyzb =new Intent(getContext(),JyzbActivity.class);
-        final Intent toDljt =new Intent(getContext(),DljtActivity.class);
-        final Intent toWqjx =new Intent(getContext(),WqjxActivity.class);
-        final Intent toJsdj =new Intent(getContext(),JsdjActivity.class);
-        final Intent toFzzb =new Intent(getContext(),FzzbActivity.class);
-        final Intent toClgl =new Intent(getContext(),CarActivity.class);
-        djzb.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
-            @Override
-            public void click() {
-                startActivity(toDjzb);
-            }
-        });
-        fhzb.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
-            @Override
-            public void click() {
-                startActivity(toFhzb);
-            }
-        });
-        jyzb.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
-            @Override
-            public void click() {
-                startActivity(toJyzb);
-            }
-        });
-        dljt.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
-            @Override
-            public void click() {
-                startActivity(toDljt);
-            }
-        });
-        wqjx.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
-            @Override
-            public void click() {
-                startActivity(toWqjx);
-            }
-        });
-        jsdj.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
-            @Override
-            public void click() {
-                startActivity(toJsdj);
-            }
-        });
-        fzzb.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
-            @Override
-            public void click() {
-                startActivity(toFzzb);
-            }
-        });*/
+
+
         /*
         给fagment按钮添加事件*/
 /*

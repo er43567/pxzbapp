@@ -70,12 +70,12 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Dialog.showOKCancelDialog(this, "是否进入Webview Demo", new DialogInterface.OnClickListener() {
+/*        Dialog.showOKCancelDialog(this, "是否进入Webview Demo", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                WebViewActivity.start(LoginActivity.this ,"http://baidu.com/", null);
+                WebViewActivity.start(LoginActivity.this ,"http://11.10.10.4:8020/zbgl_h5/pages/r2_main.html", null);
             }
-        });
+        });*/
 
         //加载完界面以后，获取控件
         Button login =findViewById(R.id.loginBtn);
@@ -115,46 +115,53 @@ public class LoginActivity extends Activity {
         });
 
 
-        //测试用的二级activity跳转按钮
-        r2Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent main2=new Intent(LoginActivity.this,Main2Activity.class);
-                Toast.makeText(getApplication(),"二级页面",Toast.LENGTH_SHORT).show();
-                startActivity(main2);
-                finish();
-            }
-        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (autoLoginCB.isChecked()) {
+                    autoLogin=1;
+                }
+                switch (autoLogin){
+                    case 0:
+                        break;
+                    case 1:
+                        SharedPreferences share = getSharedPreferences(fileName, MODE_PRIVATE);
+                        SharedPreferences.Editor editor = share.edit();
+                        editor.putString("user", userId);
+                        editor.putString("pswd", pswd);
+                        editor.putString("role", role);
+                        editor.putInt("autoLogin",1);
+                        editor.commit();
+
+                }
+                switch (role){
+                    case "一级民警":
+
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                        break;
+
+                    case "二级大队长":
+                        Intent main2=new Intent(LoginActivity.this,Main2Activity.class);
+                        startActivity(main2);
+                        finish();
+                        break;
+                        default:
+                            Toast.makeText(getApplication(),"请选择账户类型",Toast.LENGTH_SHORT).show();
+
+
+                }
                 EditText editText = findViewById(R.id.et_userId);
                 EditText pswText = findViewById(R.id.et_pass);
 
                 userId = editText.getText().toString();
                 pswd = pswText.getText().toString();
 
-                Toast.makeText(getApplicationContext()
-                        ,"自动登陆:"+autoLogin
-                        , Toast.LENGTH_SHORT).show();
-
-                Toast.makeText(getApplication(),"role:"+role,Toast.LENGTH_SHORT).show();
 //根据checkbox判断是否自动登陆
 
-
-
-                SharedPreferences share = getSharedPreferences(fileName, MODE_PRIVATE);
-                SharedPreferences.Editor editor = share.edit();
-                editor.putString("user", userId);
-                editor.putString("pswd", pswd);
-                editor.putString("role", role);
-                editor.putInt("autoLogin",autoLogin);
-                editor.commit();
-
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
 
 
 

@@ -67,7 +67,7 @@
 					</div>
 				</div>
 				<div class="mui-card-footer">
-					<a class="mui-card-link" href="zhuangbei/Fhzb.html">查看表单</a>
+					<a class="mui-card-link" onclick="go()">查看表单</a>
 					<a id="check" class="mui-card-link" onclick="check()">确定</a>
 
 				</div>
@@ -152,6 +152,11 @@
 				var div = document.getElementById("check").parentNode.parentNode;
 				div.parentNode.removeChild(document.getElementById("check").parentNode.parentNode);
 				mui.toast('完成');
+			}
+		</script>
+		<script>
+			function go() {
+				window.location.href = 'zhuangbei/Fhzb.html'
 			}
 		</script>
 	</body>

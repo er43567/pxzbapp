@@ -2,6 +2,7 @@ package pxxy.liangming.pazbapp.Fragment;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -60,6 +61,7 @@ public class TabCFm extends Fragment{
         super.onStart();
         titleBarC=(TitleBar) getView().findViewById(R.id.title_barC);
         titleBarC.setTitle("我的账户");
+        titleBarC.setTitleColor(Color.WHITE);
         System.out.println("CCCCCCCCCC____onStart");
     }
 
