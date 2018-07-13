@@ -15,14 +15,34 @@
 
     </pxxy.liangming.pazbapp.Titlebar.TitleBar>
 
-<WebView
-
-    android:id="@+id/webView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"></WebView>
 
 
+    <Button
+        android:id="@+id/tab2_b_btn1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
 
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="50dp"
+        android:background="#3a9fff"
+        android:text="查看当日装备检查状态"
+        android:textColor="#ffffff"
+        android:textSize="18dp" />
 
+    <Button
+        android:id="@+id/tab2_b_btn2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
 
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="30dp"
+        android:background="#3a9fff"
+        android:text="test"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:visibility="gone" />
 </LinearLayout>

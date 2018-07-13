@@ -121,7 +121,7 @@ android:background="#FFF"
         android:textSize="18dp" />
 
     <Button
-        android:id="@+id/r2btn"
+        android:id="@+id/testbtn"
 
         android:layout_width="150dp"
         android:layout_height="wrap_content"
@@ -131,10 +131,9 @@ android:background="#FFF"
         android:layout_marginRight="28dp"
         android:layout_marginTop="5dp"
         android:background="#3aadfd"
-        android:text="二级Activity"
+        android:text="Webview测试"
         android:textColor="#ffffff"
-        android:textSize="14dp"
-        android:visibility="gone" />
+        android:textSize="14dp" />
 
     <TextView
         android:id="@+id/promptText"

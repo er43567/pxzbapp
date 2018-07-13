@@ -13,19 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"></activity>
-        <activity android:name=".Activity.LoginActivity" >
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.RankTwo.Main2Activity">
-
-        </activity>
+        <activity android:name=".Activity.RankTwo.Main2Activity"></activity>
         <activity android:name=".Activity.zb.DjzbActivity" />
         <activity android:name=".Activity.zb.DljtActivity" />
         <activity android:name=".Activity.zb.FhzbActivity" />
@@ -35,14 +32,13 @@
         <activity android:name=".Activity.zb.WqjxActivity" />
         <activity android:name=".Activity.zb.ZbInfoActivity" />
         <activity android:name=".Activity.car.CarActivity" />
-        <activity android:name=".Activity.MsgActivity"></activity>
-
-        <activity android:name=".Webview.WebViewActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"
+        <activity android:name=".Activity.MsgActivity" />
+        <activity
+            android:name=".Webview.WebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:hardwareAccelerated="true">
-        </activity>
-
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <activity android:name=".Activity.RankThree.Main3Activity"></activity>
     </application>
 
 </manifest>

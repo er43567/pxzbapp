@@ -1,41 +1,31 @@
 package pxxy.liangming.pazbapp.Activity;
 
 import android.app.Activity;
-import android.content.DialogInterface;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.telecom.Call;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
+import java.util.Properties;
 
+import pxxy.liangming.pazbapp.Activity.RankThree.Main3Activity;
 import pxxy.liangming.pazbapp.Activity.RankTwo.Main2Activity;
 import pxxy.liangming.pazbapp.R;
-import pxxy.liangming.pazbapp.SplashActivity;
-import pxxy.liangming.pazbapp.Titlebar.TitleBar;
 import pxxy.liangming.pazbapp.Util.Dialog;
 import pxxy.liangming.pazbapp.Util.SpUtil;
 import pxxy.liangming.pazbapp.Webview.WebViewActivity;
 import pxxy.liangming.pazbapp.net.NetAdapterLrx;
+import pxxy.liangming.pazbapp.net.NetConfigUtil;
 import pxxy.liangming.pazbapp.net.NetManager;
 
 /**
@@ -44,6 +34,7 @@ import pxxy.liangming.pazbapp.net.NetManager;
  */
 
 public class LoginActivity extends Activity {
+    private static Context mContext;
     private static final String fileName = "login";//定义保存的文件的名称
     private Spinner mSpinner;
     private String role=null;
@@ -52,6 +43,9 @@ public class LoginActivity extends Activity {
     private String select=null;
     private int autoLogin=0;
     private CheckBox autoLoginCB=null;
+    String head=null;
+    String domain=null;
+    String port=null;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO 获取注销时是否传进“清除自动登陆”选项
@@ -76,12 +70,12 @@ public class LoginActivity extends Activity {
                 WebViewActivity.start(LoginActivity.this ,"http://11.10.10.4:8020/zbgl_h5/pages/r2_main.html", null);
             }
         });*/
-
+        mContext = getApplicationContext();
         //加载完界面以后，获取控件
         Button login =findViewById(R.id.loginBtn);
         EditText editText = findViewById(R.id.et_userId);
         EditText pswText = findViewById(R.id.et_pass);
-        Button r2Btn=findViewById(R.id.r2btn);
+        Button testBtn=findViewById(R.id.testbtn);
         autoLoginCB=findViewById(R.id.autoLogin);
         //新建一个SP，检查是否有用户名密码存在，在则自动登陆
 
@@ -115,11 +109,14 @@ public class LoginActivity extends Activity {
         });
 
 
-
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                Properties properties=NetConfigUtil.getProperties();
+                head= properties.getProperty("HEAD");
+                domain= properties.getProperty("DOMAIN");
+                port=properties.getProperty("PORT");
                 if (autoLoginCB.isChecked()) {
                     autoLogin=1;
                 }
@@ -147,6 +144,10 @@ public class LoginActivity extends Activity {
                     case "二级大队长":
                         Intent main2=new Intent(LoginActivity.this,Main2Activity.class);
                         startActivity(main2);
+                        finish();
+                        break;
+                    case "三级保障科":
+                        Main3Activity.start(LoginActivity.this ,head+domain+port+"/zbgl_h5/pages/r3_main.html", null);
                         finish();
                         break;
                         default:
@@ -183,6 +184,12 @@ public class LoginActivity extends Activity {
                     }
                 });
 
+            }
+        });
+        testBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WebViewActivity.start(LoginActivity.this ,"http://www.baidu.com", null);
             }
         });
 
@@ -290,4 +297,5 @@ public class LoginActivity extends Activity {
         });
 
     }*/
+
 }
