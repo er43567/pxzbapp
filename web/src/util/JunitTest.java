@@ -26,7 +26,7 @@ import com.zbms.system.service.SystemService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:applicationContext*.xml" })
 public class JunitTest {
-	@Resource
+/*	@Resource
 	private AdminService adminService;
 	@Resource
 	private zbService zbService;
@@ -141,7 +141,7 @@ public class JunitTest {
 		}
 	}
 
-	/*---------------------------------------------------------------------------*/
+	---------------------------------------------------------------------------
 	@Test
 	public void test_zb_export() {
 		XSSFWorkbook workbook = zbService.getExcel("1,2,3,6,7,8,9,14,15", "zbAward",
@@ -200,14 +200,14 @@ public class JunitTest {
 				"f2046bac-f4b9-4629-b35b-78f94010cb8d");
 	}
 
-	/*
+	
 	 * @Test public void getBase64() { List<String> info =
 	 * zbService.getImage("张三", "zbAward",
 	 * "0c52c25a-b844-4e6d-9b33-576e8938c611"); for (String str : info) {
 	 * System.out.println(str.length()); System.out.println(); } }
-	 */
+	 
 
-	/*---------------------------------------------------------------------------*/
+	---------------------------------------------------------------------------
 	@Test
 	public void test_car_test() {
 		carService.test();
@@ -265,6 +265,6 @@ public class JunitTest {
 	@Test
 	public void test111() {
 		System.out.println(md5.GetMD5Code("admin"));
-	}
+	}*/
 
 }

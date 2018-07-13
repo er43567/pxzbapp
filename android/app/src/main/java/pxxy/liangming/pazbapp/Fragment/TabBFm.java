@@ -5,6 +5,7 @@ package pxxy.liangming.pazbapp.Fragment;
  */
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -34,6 +35,7 @@ import pxxy.liangming.pazbapp.Activity.zb.WqjxActivity;
 import pxxy.liangming.pazbapp.R;
 import pxxy.liangming.pazbapp.SplashActivity;
 import pxxy.liangming.pazbapp.Titlebar.TitleBar;
+import pxxy.liangming.pazbapp.Util.SpUtil;
 
 /**
  * Created by Liangming on 2018/5/17 0020.
@@ -41,6 +43,7 @@ import pxxy.liangming.pazbapp.Titlebar.TitleBar;
 
 public class TabBFm extends Fragment{
     private TitleBar titleBarB;
+    private static final String fileName = "check";
     private Button refresh;
     private void initView() {
         LSettingItem djzb = (LSettingItem) getView().findViewById(R.id.djzb);
@@ -51,6 +54,17 @@ public class TabBFm extends Fragment{
         LSettingItem jsdj = (LSettingItem) getView().findViewById(R.id.jsdj);
         LSettingItem fzzb = (LSettingItem) getView().findViewById(R.id.fzzb);
         LSettingItem car = (LSettingItem) getView().findViewById(R.id.car);
+
+
+
+        SharedPreferences shareGet = getContext().getSharedPreferences(fileName,
+                0);
+        String test=shareGet.getString("Fhzb", "null") ;
+        if ("1".equals(test)) {
+            fhzb.setBackgroundColor(Color.GREEN);
+        }
+/*       setLeftTextColor();*/
+
 
         final Intent toDjzb = new Intent(getContext(), DjzbActivity.class);
         final Intent toFhzb = new Intent(getContext(), FhzbActivity.class);

@@ -62,4 +62,11 @@ public class MainActivity extends AppCompatActivity {
         FragmentTabAdapter tabAdapter = new FragmentTabAdapter(this, fragments, R.id.tab_content, rgs);
 
     }
+
+/*    public static void start(Context context, Object obj) {
+        //Todo 牛逼
+        context.startActivity();
+
+
+    }*/
 }

@@ -55,12 +55,18 @@ public class ReportAction extends CommonAction {
 				, report.getZhuangbeiType()
 				, report.getZhuangbeiName()
 				, datas);
+		System.out.println("submitReport");
 		return aa;
 	}
 	
+	@Action(value="/loadReport"
+			,results={@Result(type="json")}
+			,params={"contentType", "text/html"})
 	public String loadReportDatas() {
 		
-/*		datas = service.load...*/
+		//service.loadReports();
+/*		datas = service.loadReports(length)*/
+		//
 		return aa;
 		
 	}

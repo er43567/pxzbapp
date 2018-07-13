@@ -59,6 +59,8 @@ public class LoginActivity extends Activity {
         //Todo 清除sp
             autoLogin=0;
         }
+
+        SpUtil.init(this);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,17 +81,17 @@ public class LoginActivity extends Activity {
         Button r2Btn=findViewById(R.id.r2btn);
         //新建一个SP，检查是否有用户名密码存在，在则自动登陆
 
-        if(autoLogin==1) {
+
 
             SharedPreferences shareGet = super.getSharedPreferences(fileName,
                     MODE_PRIVATE);
-            editText.setText(shareGet.getString("user", "null"));
+            editText.setText(shareGet.getString("user", ""));
             pswText.setText(shareGet.getString("pswd", ""));
-
+        editText.getText()
             Toast.makeText(getApplicationContext()
                     , "user:" + shareGet.getString("user", "") + "/" + shareGet.getString("pswd", "")
                     , Toast.LENGTH_SHORT).show();
-        }
+
 
         mSpinner = (Spinner) findViewById(R.id.spinner);
         //监听Spinner的操作
@@ -136,7 +138,7 @@ public class LoginActivity extends Activity {
                 editor.putString("pswd", pswd);
                 editor.putString("role", role);
                 editor.commit();
-                autoLogin=1;
+
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();

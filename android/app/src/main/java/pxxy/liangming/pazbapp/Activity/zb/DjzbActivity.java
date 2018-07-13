@@ -39,7 +39,7 @@ public class DjzbActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xiaxc_danjingzb);
 
-        initWidgets();
+/*        initWidgets();*/
 
 
     }
@@ -47,7 +47,7 @@ public class DjzbActivity extends AppCompatActivity {
     /**
      * 所有的组建初始化
      */
-    private void initWidgets() {
+/*    private void initWidgets() {
         //初始化所有RadioGroup的监听器
         for (int i=0;i<radioGroups.length;i++) {
             final int k = i;
@@ -74,7 +74,7 @@ public class DjzbActivity extends AppCompatActivity {
                         }
                     }
                 });
-    }
+    }*/
 
 
 }
